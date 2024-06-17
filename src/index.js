@@ -1,6 +1,6 @@
-import initScrollReveal from "./scrollReveal";
-import initTiltEffect from "./tiltAnimation";
-import { targetElements, defaultProps } from "./scrollRevealConfig";
+import initScrollReveal from "./scrollReveal.js";
+import initTiltEffect from "./tiltAnimation.js";
+import { targetElements, defaultProps } from "./scrollRevealConfig.js";
 
 initScrollReveal(targetElements, defaultProps);
 initTiltEffect();
