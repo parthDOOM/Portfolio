@@ -25,14 +25,34 @@
       src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"
     ></script>
 
+
+
     <!-- Todo: remove the below script once you finish your portfolio -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- <script async defer src="https://buttons.github.io/buttons.js"></script> -->
   </head>
 
   <!-- Todo: read the following HTML Todos to create your stunning portfolio website -->
   <body>
     <div id="top"></div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="#top" class="logo">Parthiv Jasoliya</a>
+        <ul class="nav-menu">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- End Navigation Bar -->
 
+    <!-- Content sections as before -->
+
+    <!-- Scripts -->
+    <script type="module" defer src="index.js"></script>
     <!-- **** MY Section **** -->
     <section id="hero" class="jumbotron">
       <div class="container">
@@ -80,7 +100,7 @@
                   rel="noreferrer"
                   target="_blank"
                   class="cta-btn cta-btn--resume"
-                  href="assets/Resume.pdf"
+                  href="assets/Resume4.pdf"
                 >
                   View Resume
                 </a>
@@ -92,6 +112,105 @@
     </section>
     <!-- /END About Section -->
 
+<!-- **** Skill section **** -->
+
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title dark-blue-text">Skills</h2>
+    <div class="skills-wrapper">
+      <div class="skills-category">
+        <h3 class="skills-category__title">Web Development</h3>
+        <div class="skill">
+          <div class="skill-name">
+            <span>HTML</span>
+            <span>70%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar__fill" style="width: 70%;"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">
+            <span>CSS</span>
+            <span>65%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar__fill" style="width: 65%;"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">
+            <span>JavaScript</span>
+            <span>75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar__fill" style="width: 75%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-category">
+        <h3 class="skills-category__title">Data Structures & Algorithms</h3>
+        <div class="skill">
+          <div class="skill-name">
+            <span>C++</span>
+            <span>85%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar__fill" style="width: 85%;"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">
+            <span>Python</span>
+            <span>75%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar__fill" style="width: 75%;"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">
+            <span>Java</span>
+            <span>80%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar__fill" style="width: 80%;"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="skills-category">
+        <h3 class="skills-category__title">Machine Learning</h3>
+        <div class="skill">
+          <div class="skill-name">
+            <span>Python</span>
+            <span>70%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar__fill" style="width: 70%;"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">
+            <span>TensorFlow</span>
+            <span>65%</span>
+          </div>
+          <div class="skill-bar">
+            <div class="skill-bar__fill" style="width: 65%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ScrollReveal Script -->
+<script defer src="https://unpkg.com/scrollreveal"></script>
+<script defer src="./scripts/idk.js"></script>
+
+
+<!-- END Skill section -->
     <!-- **** Projects Section **** -->
     <section id="projects">
       <div class="container">
