@@ -6,7 +6,7 @@ initScrollReveal(targetElements, defaultProps);
 initTiltEffect();
 
 
-// index.js
+// for navbar
 
 document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-menu a');
@@ -45,4 +45,3 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
-  
