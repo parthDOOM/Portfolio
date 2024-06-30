@@ -35,34 +35,64 @@
   }
 }
 
+// .social-links {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+
+//   a {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     color: $white-color;
+//     font-size: 3rem;
+//     width: 5rem;
+//     height: 5rem;
+//     margin: $default-font-size $default-font-size;
+//     transition: all 0.2s ease-in;
+
+//     &:hover {
+//       transform: translateY(-2px);
+//     }
+//   }
+// }
+
+// .back-to-top i {
+//   color: $white-color;
+//   margin: 1rem 0 $default-font-size;
+//   transition: all 0.2s ease-in;
+
+//   &:hover {
+//     transform: translateY(-2px);
+//   }
+// }
 .social-links {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 
   a {
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
     color: $white-color;
-    font-size: 3rem;
-    width: 5rem;
-    height: 5rem;
-    margin: $default-font-size $default-font-size;
-    transition: all 0.2s ease-in;
+    font-size: 2rem; /* Adjust icon size for smaller screens */
+    width: 50px; /* Adjust width for smaller screens */
+    height: 50px; /* Adjust height for smaller screens */
+    margin: $default-font-size; /* Adjust margin for spacing */
 
     &:hover {
       transform: translateY(-2px);
     }
   }
-}
 
-.back-to-top i {
-  color: $white-color;
-  margin: 1rem 0 $default-font-size;
-  transition: all 0.2s ease-in;
+  @media (max-width: 425px) {
+    flex-direction: column;
+    align-items: center;
 
-  &:hover {
-    transform: translateY(-2px);
+    a {
+      margin: $default-font-size 0; /* Adjust vertical margin for stacked icons */
+    }
   }
 }
