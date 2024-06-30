@@ -60,10 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-
-
-  $(document).ready(function() {
+$(document).ready(function() {
     $('.toggle-menu').click(function() {
-      $('.nav-menu').toggleClass('active');
+        $('.nav-menu').toggleClass('active');
     });
-  });
+});
