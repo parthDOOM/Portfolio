@@ -1,0 +1,112 @@
+.cursor-tracker {
+  position: relative;
+  min-height: 100vh;
+  overflow: visible;
+}
+
+.cursor-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0; /* Changed from -2 to 0 to be above section backgrounds */
+  background: 
+    radial-gradient(
+      800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(249, 115, 22, 0.02) 0%, /* Reduced opacity to work with section backgrounds */
+      rgba(251, 146, 60, 0.01) 40%,
+      transparent 70%
+    );
+  transition: background 0.2s ease-out;
+  pointer-events: none;
+  mix-blend-mode: screen; /* Blend with section backgrounds */
+}
+
+.cursor-tracker.cursor-active .cursor-background {
+  background: 
+    radial-gradient(
+      600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(249, 115, 22, 0.04) 0%, /* Slightly more visible when active */
+      rgba(251, 146, 60, 0.02) 30%,
+      rgba(234, 88, 12, 0.01) 50%,
+      transparent 70%
+    );
+}
+
+.cursor-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1; /* Changed from -1 to 1 to be above section backgrounds */
+  pointer-events: none;
+  opacity: 0.6; /* Always show subtle effect instead of 0 */
+  transition: opacity 0.3s ease;
+}
+
+.cursor-tracker.cursor-active .cursor-particles {
+  opacity: 1; /* Full opacity when active */
+}
+
+.cursor-particles::before,
+.cursor-particles::after {
+  content: '';
+  position: absolute;
+  width: 6px; /* Increased from 4px */
+  height: 6px; /* Increased from 4px */
+  background: rgba(249, 115, 22, 0.6); /* Increased opacity from 0.3 to 0.6 */
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(249, 115, 22, 0.4); /* Added glow */
+  animation: float 6s ease-in-out infinite;
+  transform: translate(
+    calc(var(--mouse-x, 50%) * 1vw - 3px), /* Adjusted for new size */
+    calc(var(--mouse-y, 50%) * 1vh - 3px)
+  );
+}
+
+.cursor-particles::after {
+  width: 3px; /* Increased from 2px */
+  height: 3px; /* Increased from 2px */
+  background: rgba(251, 146, 60, 0.8); /* Increased opacity from 0.5 to 0.8 */
+  box-shadow: 0 0 6px rgba(251, 146, 60, 0.5); /* Added glow */
+  animation-delay: -3s;
+  animation-duration: 4s;
+  transform: translate(
+    calc(var(--mouse-x, 50%) * 1vw + 20px),
+    calc(var(--mouse-y, 50%) * 1vh + 20px)
+  );
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(
+      calc(var(--mouse-x, 50%) * 1vw - 2px),
+      calc(var(--mouse-y, 50%) * 1vh - 2px)
+    ) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(
+      calc(var(--mouse-x, 50%) * 1vw - 2px),
+      calc(var(--mouse-y, 50%) * 1vh - 2px)
+    ) scale(1.2);
+    opacity: 0.6;
+  }
+}
+
+/* Mobile optimization - disable cursor effects */
+@media (max-width: 768px) or (hover: none) {
+  .cursor-background {
+    background: linear-gradient(135deg, 
+      rgba(31, 41, 55, 0.8) 0%, 
+      rgba(17, 24, 39, 0.9) 50%, 
+      rgba(31, 41, 55, 0.8) 100%
+    ) !important;
+  }
+  
+  .cursor-particles {
+    display: none;
+  }
+}

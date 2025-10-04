@@ -1,0 +1,94 @@
+.dynamic-greeting {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.greeting-emoji {
+  font-size: 1.3rem;
+  display: inline-block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.greeting-text {
+  background: linear-gradient(135deg, #f97316, #fb923c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+/* Time-based styling */
+.dynamic-greeting.morning {
+  --accent-color: #fbbf24;
+}
+
+.dynamic-greeting.afternoon {
+  --accent-color: #f59e0b;
+}
+
+.dynamic-greeting.evening {
+  --accent-color: #f97316;
+}
+
+.dynamic-greeting.night {
+  --accent-color: #6366f1;
+}
+
+.dynamic-greeting.morning .greeting-text {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dynamic-greeting.afternoon .greeting-text {
+  background: linear-gradient(135deg, #f59e0b, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dynamic-greeting.evening .greeting-text {
+  background: linear-gradient(135deg, #f97316, #fb923c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dynamic-greeting.night .greeting-text {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtle animation for emoji */
+.greeting-emoji {
+  animation: subtle-bounce 3s ease-in-out infinite;
+}
+
+@keyframes subtle-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .dynamic-greeting {
+    font-size: 1rem;
+    justify-content: center;
+  }
+  
+  .greeting-emoji {
+    font-size: 1.2rem;
+  }
+}
