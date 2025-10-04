@@ -78,7 +78,7 @@ export const projects: Project[] = [
     technologies: ["JavaScript", "HTML", "CSS", "Neural Networks", "Genetic Algorithms"],
     image: "/assets/selfdrive.png",
     githubUrl: "https://github.com/parthDOOM/Self_Driving_Car.git",
-    liveUrl: "https://parthdoom.github.io/selfdrive/",
+    liveUrl: "https://selfdrv.netlify.app/",
     featured: true
   },
   {
