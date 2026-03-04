@@ -175,27 +175,56 @@
   margin-bottom: var(--space-lg);
 }
 
-.project-tech {
+.project-tech-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: var(--space-md);
+}
+
+.project-tech-scroll {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-xs);
-  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(249, 115, 22, 0.2) transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+.project-tech-scroll::-webkit-scrollbar {
+  height: 3px;
+}
+
+.project-tech-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.project-tech-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(249, 115, 22, 0.1);
+  border-radius: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.project-card:hover .project-tech-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(249, 115, 22, 0.4);
 }
 
 .tech-tag {
   background: rgba(99, 102, 241, 0.1);
   border: 1px solid rgba(99, 102, 241, 0.2);
   color: var(--accent-primary);
-  padding: var(--space-xs) var(--space-sm);
+  padding: 4px 12px;
   border-radius: var(--radius-sm);
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.3s ease;
 }
 
-.tech-more {
-  color: var(--text-muted);
-  font-size: 0.8rem;
-  font-weight: 500;
+.project-card:hover .tech-tag {
+  border-color: var(--accent-primary);
+  background: rgba(99, 102, 241, 0.15);
 }
 
 /* Modal Styles */

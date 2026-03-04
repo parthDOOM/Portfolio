@@ -163,13 +163,12 @@ const Projects: React.FC = () => {
           
           <p className="project-description">{project.description}</p>
           
-          <div className="project-tech">
-            {project.technologies.slice(0, 3).map((tech) => (
-              <span key={tech} className="tech-tag">{tech}</span>
-            ))}
-            {project.technologies.length > 3 && (
-              <span className="tech-more">+{project.technologies.length - 3}</span>
-            )}
+          <div className="project-tech-container">
+            <div className="project-tech-scroll">
+              {project.technologies.map((tech) => (
+                <span key={tech} className="tech-tag">{tech}</span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

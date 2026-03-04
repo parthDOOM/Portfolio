@@ -39,14 +39,24 @@ export const skills: Skill[] = [
 
 export const projects: Project[] = [
   {
-    id: "code-base",
-    title: "Code Base",
-    description: "MERN Stack Web Application with robust CRUD operations optimizing query response times to under 50 ms.",
-    fullDescription: "The MERN Stack Web Application is a responsive platform developed using MongoDB, Express.js, React, and Node.js, featuring robust CRUD operations that optimize query response times to under 50 ms through effective caching strategies. User access is secured with OAuth 2.0 and JWT-based authentication, and the application supports multiple languages for broader accessibility. Automated unit and end-to-end testing using Jest and Cypress achieved 95% test coverage, while deployment on AWS through CI/CD pipelines using Docker and Jenkins ensures streamlined feature deployment and continuous integration, resulting in a scalable and user-friendly web application.",
-    technologies: ["React", "Node.js", "MongoDB", "Express.js", "JWT", "OAuth 2.0", "Docker", "AWS", "Jest", "Cypress"],
-    image: "/assets/Code_Base.png",
-    githubUrl: "https://github.com/parthDOOM/YeetTheCode",
-    liveUrl: "https://code-vault-new-frontend.vercel.app/",
+    id: "canvas-homes",
+    title: "Canvas Homes",
+    description: "Next.js real estate platform that enables users to browse, filter, and manage property listings using Redux for global state.",
+    fullDescription: "Canvas Homes is a Next.js real estate platform that enables users to browse, filter, and manage property listings using Redux for global state. It provides detailed property insights, including RERA data and brochures, alongside engagement features like enquiry modals and call scheduling.",
+    technologies: ["Next.js", "TypeScript", "TailwindCSS", "PostgreSQL", "GCP", "Firebase", "Redux"],
+    image: "/assets/canvashomes.png",
+    liveUrl: "https://canvas-homes.com",
+    featured: true
+  },
+    {
+    id: "graph-visualizer",
+    title: "Graph Visualizer",
+    description: "TypeScript web tool for data visualization with downloadable PNG export functionality.",
+    fullDescription: "\"Lookatthisgraph\" is a web-based data visualization tool developed with TypeScript, JavaScript, Tailwind CSS, and Vite, designed to help users create and interact with various graphical representations like graphs and trees. It's especially useful during competitive programming contests for visualizing Graphs and Trees problem-solving strategies. Key features include customizable visualizations, real-time data updates, and the ability to download the generated visuals as PNG files.",
+    technologies: ["TypeScript", "JavaScript", "Tailwind CSS", "Vite", "Canvas API"],
+    image: "/assets/graph.png",
+    githubUrl: "https://github.com/parthDOOM/Lookatthisgraph",
+    liveUrl: "https://lookatthisgraph.netlify.app/",
     featured: true
   },
   {
@@ -68,7 +78,7 @@ export const projects: Project[] = [
     technologies: ["PHP", "MySQL", "Apache", "HTML", "CSS", "JavaScript"],
     image: "/assets/FIFA.png",
     githubUrl: "https://github.com/parthDOOM/FIFA_DBMS",
-    featured: true
+    featured: false
   },
   {
     id: "self-driving-car",
@@ -90,17 +100,6 @@ export const projects: Project[] = [
     image: "/assets/cafe.png",
     githubUrl: "https://github.com/parthDOOM/GWOC_Proj_2024",
     liveUrl: "https://aayudhpanchal.github.io/Koe-s-Cafe-GWOC-24/",
-    featured: false
-  },
-  {
-    id: "graph-visualizer",
-    title: "Graph Visualizer",
-    description: "TypeScript web tool for data visualization with downloadable PNG export functionality.",
-    fullDescription: "\"Lookatthisgraph\" is a web-based data visualization tool developed with TypeScript, JavaScript, Tailwind CSS, and Vite, designed to help users create and interact with various graphical representations like graphs and trees. It's especially useful during competitive programming contests for visualizing Graphs and Trees problem-solving strategies. Key features include customizable visualizations, real-time data updates, and the ability to download the generated visuals as PNG files.",
-    technologies: ["TypeScript", "JavaScript", "Tailwind CSS", "Vite", "Canvas API"],
-    image: "/assets/graph.png",
-    githubUrl: "https://github.com/parthDOOM/Lookatthisgraph",
-    liveUrl: "https://lookatthisgraph.netlify.app/",
     featured: false
   },
   {

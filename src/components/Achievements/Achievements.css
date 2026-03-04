@@ -200,8 +200,8 @@
 }
 
 .achievements-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: var(--space-lg);
 }
 
@@ -277,7 +277,8 @@
   letter-spacing: 0.5px;
 }
 
-.achievement-category.competition {
+.achievement-category.competition,
+.achievement-category.ml {
   background: rgba(16, 185, 129, 0.1);
   color: var(--accent-success);
   border: 1px solid rgba(16, 185, 129, 0.2);

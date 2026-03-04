@@ -42,46 +42,47 @@ const Experience: React.FC = () => {
           My journey through internships and collaborative roles
         </motion.p>
 
-        <div className="experience-timeline">
+        <div className="experience-grid">
           {experiences.map((exp, index) => (
             <motion.div
               key={`${exp.company}-${exp.title}`}
-              className="experience-item"
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              animate={hasAnimated ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              transition={{ duration: 0.8, delay: index * 0.2 + 0.3 }}
+              className="experience-card card-glass"
+              initial={{ opacity: 0, y: 30 }}
+              animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
             >
-              <div className="experience-dot" />
-              <div className="experience-content card-glass">
-                <div className="experience-header">
-                  <div className="experience-title-area">
-                    <h3 className="experience-title">{exp.title}</h3>
-                    <h4 className="experience-company">{exp.company}</h4>
+              <div className="experience-card-header">
+                <div className="company-info">
+                  <h3 className="experience-title">{exp.title}</h3>
+                  <h4 className="experience-company">{exp.company}</h4>
+                </div>
+                <div className="experience-meta">
+                  <div className="meta-item">
+                    <Calendar size={14} />
+                    <span>{exp.duration}</span>
                   </div>
-                  <div className="experience-meta-area">
-                    <div className="experience-duration">
-                      <Calendar size={14} />
-                      {exp.duration}
-                    </div>
-                    <div className="experience-location">
-                      <MapPin size={14} />
-                      {exp.location}
-                    </div>
+                  <div className="meta-item">
+                    <MapPin size={14} />
+                    <span>{exp.location}</span>
                   </div>
                 </div>
+              </div>
 
-                <ul className="experience-description">
-                  {exp.description.map((bullet: string, i: number) => (
-                    <li key={i}>{bullet}</li>
-                  ))}
-                </ul>
+              <ul className="experience-bullets">
+                {exp.description.map((bullet: string, i: number) => (
+                  <li key={i}>{bullet}</li>
+                ))}
+              </ul>
 
-                <div className="experience-technologies">
-                  {exp.technologies.map((tech: string) => (
-                    <span key={tech} className="tech-badge">
-                      {tech}
-                    </span>
-                  ))}
+              <div className="experience-footer">
+                <div className="experience-tech-container">
+                  <div className="experience-tech-scroll">
+                    {exp.technologies.map((tech: string) => (
+                      <span key={tech} className="tech-tag">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
                 {exp.certificateUrl && (
@@ -89,12 +90,12 @@ const Experience: React.FC = () => {
                     href={exp.certificateUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="experience-certificate-link"
+                    className="exp-cert-btn"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Award size={16} />
-                    View Internship Certificate
+                    <Award size={14} />
+                    Certificate
                   </motion.a>
                 )}
               </div>
