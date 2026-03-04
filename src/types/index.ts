@@ -23,9 +23,11 @@ export interface Skill {
 export interface Experience {
   title: string;
   company: string;
+  location: string;
   duration: string;
-  description: string;
+  description: string[];
   technologies: string[];
+  certificateUrl?: string;
 }
 
 export interface Achievement {
@@ -34,6 +36,7 @@ export interface Achievement {
   date: string;
   category: 'competition' | 'certification' | 'award' | 'ml';
   link?: string;
+  certificates?: { label: string; url: string }[];
 }
 
 export interface CompetitiveProgramming {

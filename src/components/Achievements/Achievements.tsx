@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { Trophy, Award, Calendar, ExternalLink } from 'lucide-react';
 import { achievements, competitiveProgramming } from '../../data/portfolioData';
 import AnimatedBackground from '../AnimatedBackground';
@@ -10,12 +10,21 @@ const Achievements: React.FC = () => {
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   const [hasAnimated, setHasAnimated] = useState(false);
   const [codeforcesRating, setCodeforcesRating] = useState<string>('Loading...');
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const icpcImages = ['/assets/ICPC2024.jpg', '/assets/ICPC2025.jpg'];
 
   React.useEffect(() => {
     if (isInView && !hasAnimated) {
       setHasAnimated(true);
     }
   }, [isInView, hasAnimated]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % icpcImages.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     // Fetch Codeforces rating
@@ -74,9 +83,9 @@ const Achievements: React.FC = () => {
         >
           <div className="icpc-content">
             <div className="icpc-text">
-              <h3 className="icpc-title">ICPC Amritapuri Regional Onsite 2024</h3>
+              <h3 className="icpc-title">ICPC Amritapuri Regional Onsite 2024 and 2025</h3>
               <p className="icpc-description">
-                Represented my college at the ICPC Regional Amritapuri Onsite 2024, one of the top competitive programming contests. It was a great experience tackling challenging problems and collaborating as a team under tight deadlines.
+                Represented my college at the ICPC Regional Amritapuri Onsite 2024 and 2025, one of the top competitive programming contests. It was a great experience tackling challenging problems and collaborating as a team under tight deadlines.
               </p>
               <motion.a
                 href="/assets/2025-ICPC Asia Amritapuri Multisite RC 2024-Parthiv Jasoliya-PLACE.pdf"
@@ -91,7 +100,17 @@ const Achievements: React.FC = () => {
               </motion.a>
             </div>
             <div className="icpc-image">
-              <img src="/assets/ICPC.jpg" alt="ICPC 2024" />
+              <AnimatePresence mode="wait">
+                <motion.img 
+                  key={icpcImages[currentImageIndex]}
+                  src={icpcImages[currentImageIndex]} 
+                  alt={`ICPC ${2024 + currentImageIndex}`}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 1.05 }}
+                  transition={{ duration: 0.6 }}
+                />
+              </AnimatePresence>
             </div>
           </div>
         </motion.div>
@@ -140,7 +159,7 @@ const Achievements: React.FC = () => {
         >
           <h3 className="subsection-title">Other Achievements</h3>
           <div className="achievements-list">
-            {achievements.slice(1).map((achievement, index) => (
+            {achievements.map((achievement, index) => (
               <motion.div
                 key={achievement.title}
                 className="achievement-card"
@@ -163,6 +182,36 @@ const Achievements: React.FC = () => {
                     <span className={`achievement-category ${achievement.category}`}>
                       {achievement.category}
                     </span>
+                    
+                    {/* Action buttons beside the tag */}
+                    {achievement.link && achievement.link !== "#" && (
+                      <motion.a
+                        href={achievement.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="achievement-link-button"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <Award size={14} />
+                        View Certificate
+                      </motion.a>
+                    )}
+                    
+                    {achievement.certificates && achievement.certificates.map((cert) => (
+                      <motion.a
+                        key={cert.url}
+                        href={cert.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="achievement-link-button secondary"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <Award size={14} />
+                        {cert.label}
+                      </motion.a>
+                    ))}
                   </div>
                 </div>
               </motion.div>

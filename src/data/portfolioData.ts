@@ -1,4 +1,4 @@
-import { Project, Skill, Achievement, CompetitiveProgramming, ContactInfo } from '../types';
+import { Project, Skill, Achievement, CompetitiveProgramming, ContactInfo, Experience } from '../types';
 
 export const personalInfo = {
   name: "Parthiv Jasoliya",
@@ -6,7 +6,7 @@ export const personalInfo = {
   subtitle: "Studying at NIT Surat",
   bio: "Welcome to my portfolio! I am a Software Developer studying at NIT Surat, passionate about programming, web development, IoT and artificial intelligence. With a strong foundation in languages like Java, C/C++, and Python, I've sharpened my skills by working on real-world projects and tackling challenging problems.",
   fullBio: "Some highlights include building responsive web applications using modern frameworks like React and optimizing database systems for high performance. I've also explored the fields of generative AI and machine learning, developing innovative solutions such as a platform for creating intricate 2D artwork and physics models during my internship. With hands-on experience in tools and technologies like MERN stack, Spring Boot, and neural networks(GANs, CNNs), I bring a blend of technical expertise and problem-solving ability. My achievements in competitive programming, including being an ICPC Regionalist and ranking among the top in global coding contests(META Hackercup), reflect my drive to excel in this field.",
-  resumeUrl: "/assets/Resume_All_Exp.pdf",
+  resumeUrl: "/assets/ParthivJasoliya-2026-SDE.pdf",
   profileImage: "/assets/self1.jpg"
 };
 
@@ -137,6 +137,34 @@ export const projects: Project[] = [
   }
 ];
 
+export const experiences: Experience[] = [
+  {
+    title: "Cyber Security Intern",
+    company: "TCS R&I",
+    location: "Hyderabad, India",
+    duration: "May 2025 - Jul 2025",
+    description: [
+      "Designed a secure ingestion pipeline to normalize 10+ diverse threat-intel feeds from various sources into an enterprise-ready data model, standardizing formats and reducing parsing errors by 40% using RAG and LLM.",
+      "Developed autonomous AI-driven agent workflows for cloud security-automating policy compliance checks, posture checks, and adaptive remediation-reducing manual triage effort by 30% and improving response time consistency.",
+      "Integrated the agent into an end-to-end tool that suggests policy restructuring, access control tuning, and least-privilege recommendations-streamlining audits and reducing policy misconfigurations in pre-production environments."
+    ],
+    technologies: ["RAG", "LLM", "Cloud Security", "AI Workflows", "Cyber Security"],
+    certificateUrl: "/assets/2927832-Parthiv Jasoliya.pdf"
+  },
+  {
+    title: "GenAI Intern",
+    company: "VoxelVerse",
+    location: "Hyderabad, India",
+    duration: "Jul 2024 - Aug 2024",
+    description: [
+      "Engineered a generative AI platform that allows users to automatically produce intricate 2D artwork and physics models, resulting in faster turnaround times during the asset creation process.",
+      "Streamlined the world environment generation process using neural rendering and data-driven techniques, reducing generation time by 25% while maintaining complexity and visual fidelity.",
+      "Improved interactive weather systems through machine learning-based pattern recognition, increasing environmental patterns generation accuracy by 15% and enhancing real-time responsiveness."
+    ],
+    technologies: ["GenAI", "Neural Rendering", "ML", "Pattern Recognition", "Python"]
+  }
+];
+
 export const achievements: Achievement[] = [
   {
     title: "Amazon ML Summer School 2024",
@@ -146,17 +174,14 @@ export const achievements: Achievement[] = [
     link: "#"
   },
   {
-    title: "ICPC Amritapuri Regional Onsite 2024",
-    description: "Represented my college at the ICPC Regional Amritapuri Onsite 2024, one of the top competitive programming contests.",
-    date: "2024",
+    title: "Meta Hacker Cup",
+    description: "Global competitive programming contest. 2025: Round 3 (130th/500), Round 2 (156th/5,972 - Adv. to R3), Round 1 (705th/13,779 - Adv. to R2). 2024: Round 2 (2,583rd/5,000), Round 1 (581st/22,494 - Adv. to R2).",
+    date: "2024 - 2025",
     category: "competition",
-    link: "/assets/2025-ICPC Asia Amritapuri Multisite RC 2024-Parthiv Jasoliya-PLACE.pdf"
-  },
-  {
-    title: "META Hackercup - Top Ranking",
-    description: "Achieved top ranking in global coding contest META Hackercup, demonstrating exceptional problem-solving skills.",
-    date: "2024",
-    category: "competition"
+    certificates: [
+      { label: "2025 Certificate", url: "/assets/MetaHackercup2025.pdf" },
+      { label: "2024 Certificate", url: "/assets/MetaHackercup2024.pdf" }
+    ]
   }
 ];
 

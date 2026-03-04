@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Download, Github, Linkedin } from 'lucide-react';
+import { ChevronDown, Eye, Github, Linkedin } from 'lucide-react';
 import { personalInfo, contactInfo } from '../../data/portfolioData';
 import AnimatedBackground from '../AnimatedBackground';
 import TypewriterText from '../TypewriterText';
@@ -97,8 +97,8 @@ const Hero: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Download size={18} />
-              Download Resume
+              <Eye size={18} />
+              View Resume
             </motion.a>
             
             <div className="hero-social">

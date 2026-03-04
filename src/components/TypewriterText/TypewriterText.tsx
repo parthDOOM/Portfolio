@@ -44,7 +44,7 @@ const TypewriterText: React.FC<TypewriterTextProps> = ({
   }, [currentIndex, text, speed, isStarted, onComplete]);
 
   return (
-    <span className={className}>
+    <span className={`typewriter-text ${className}`}>
       {displayText}
       <span className="typewriter-cursor">|</span>
     </span>

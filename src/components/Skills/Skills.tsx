@@ -46,10 +46,9 @@ const Skills: React.FC = () => {
 
   // Calculate statistics
   const totalSkills = skills.length;
-  // const totalProjects = skills.reduce((sum, skill) => sum + skill.projects - 1, 0);
-  const totalProjects = 53;
-
-  const expertSkills = skills.filter(skill => skill.level >= 4).length;
+  const totalProjects = 50; // Hardcoded or calculated
+  const problemsSolved = "1500+";
+  const topRating = "2100+";
 
   const categoryTitles = {
     web: 'Web Development',
@@ -121,21 +120,6 @@ const Skills: React.FC = () => {
             <span className="skill-projects">{skill.projects} projects</span>
           </div>
         </div>
-        <div className="skill-experience">
-          <span className="experience-time">{skill.experience}</span>
-          <div className="skill-dots">
-            {[1, 2, 3, 4, 5].map((dot) => (
-              <div
-                key={dot}
-                className={`skill-dot ${dot <= skill.level ? 'active' : ''} ${hasAnimated ? 'animated' : ''}`}
-                style={{
-                  transform: hasAnimated ? 'scale(1)' : 'scale(0)',
-                  transition: hasAnimated ? 'none' : `transform 0.3s ease ${(index * 0.1 + dot * 0.1)}s`
-                }}
-              />
-            ))}
-          </div>
-        </div>
       </div>
     );
   };
@@ -181,8 +165,12 @@ const Skills: React.FC = () => {
             <span className="stat-label">Projects Built</span>
           </div>
           <div className="stat-item">
-            <span className="stat-number">{expertSkills}</span>
-            <span className="stat-label">Expert Level</span>
+            <span className="stat-number">{problemsSolved}</span>
+            <span className="stat-label">Problems Solved</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-number">{topRating}</span>
+            <span className="stat-label">Top Rating(Codeforces)</span>
           </div>
         </motion.div>
 
