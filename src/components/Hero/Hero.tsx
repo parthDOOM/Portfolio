@@ -34,8 +34,8 @@ const Hero: React.FC = () => {
     <section id="hero" className="hero">
       <AnimatedBackground 
         particleCount={35} 
-        particleColor="#f97316" 
-        connectionColor="#fb923c" 
+        particleColor="#14b8a6" 
+        connectionColor="#5eead4" 
       />
       
       <div className="hero-content">

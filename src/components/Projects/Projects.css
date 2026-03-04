@@ -1,5 +1,5 @@
 .projects {
-  background: radial-gradient(ellipse at center, rgba(249, 115, 22, 0.03) 0%, transparent 70%) !important;
+  background: radial-gradient(ellipse at center, rgba(20, 184, 166, 0.03) 0%, transparent 70%) !important;
   position: relative;
   overflow: hidden;
   z-index: 2; /* Ensure content appears above cursor effects */
@@ -9,7 +9,7 @@
   display: flex;
   justify-content: center;
   gap: var(--space-md);
-  margin-bottom: var(--space-3xl);
+  margin-bottom: var(--space-xl);
 }
 
 .filter-button {
@@ -63,7 +63,7 @@
 
 .project-card:hover {
   background: var(--bg-card-hover);
-  border-color: rgba(249, 115, 22, 0.4);
+  border-color: rgba(20, 184, 166, 0.4);
   transform: 
     perspective(1000px) 
     rotateX(5deg) 
@@ -72,7 +72,7 @@
     translateZ(20px);
   box-shadow: 
     0 30px 60px rgba(0, 0, 0, 0.3),
-    0 0 40px rgba(249, 115, 22, 0.15),
+    0 0 40px rgba(20, 184, 166, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
@@ -172,7 +172,7 @@
 .project-description {
   color: var(--text-secondary);
   line-height: 1.6;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .project-tech-container {
@@ -188,7 +188,7 @@
   overflow-x: auto;
   padding-bottom: 8px;
   scrollbar-width: thin;
-  scrollbar-color: rgba(249, 115, 22, 0.2) transparent;
+  scrollbar-color: rgba(20, 184, 166, 0.2) transparent;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -201,13 +201,13 @@
 }
 
 .project-tech-scroll::-webkit-scrollbar-thumb {
-  background-color: rgba(249, 115, 22, 0.1);
+  background-color: rgba(20, 184, 166, 0.1);
   border-radius: 20px;
   transition: background-color 0.3s ease;
 }
 
 .project-card:hover .project-tech-scroll::-webkit-scrollbar-thumb {
-  background-color: rgba(249, 115, 22, 0.4);
+  background-color: rgba(20, 184, 166, 0.4);
 }
 
 .tech-tag {

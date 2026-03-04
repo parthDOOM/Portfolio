@@ -14,8 +14,8 @@
   background: 
     radial-gradient(
       800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgba(249, 115, 22, 0.02) 0%, /* Reduced opacity to work with section backgrounds */
-      rgba(251, 146, 60, 0.01) 40%,
+      rgba(20, 184, 166, 0.02) 0%, /* Reduced opacity to work with section backgrounds */
+      rgba(94, 234, 212, 0.01) 40%,
       transparent 70%
     );
   transition: background 0.2s ease-out;
@@ -27,9 +27,9 @@
   background: 
     radial-gradient(
       600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgba(249, 115, 22, 0.04) 0%, /* Slightly more visible when active */
-      rgba(251, 146, 60, 0.02) 30%,
-      rgba(234, 88, 12, 0.01) 50%,
+      rgba(20, 184, 166, 0.04) 0%, /* Slightly more visible when active */
+      rgba(94, 234, 212, 0.02) 30%,
+      rgba(13, 148, 136, 0.01) 50%,
       transparent 70%
     );
 }
@@ -56,9 +56,9 @@
   position: absolute;
   width: 6px; /* Increased from 4px */
   height: 6px; /* Increased from 4px */
-  background: rgba(249, 115, 22, 0.6); /* Increased opacity from 0.3 to 0.6 */
+  background: rgba(20, 184, 166, 0.6); /* Increased opacity from 0.3 to 0.6 */
   border-radius: 50%;
-  box-shadow: 0 0 8px rgba(249, 115, 22, 0.4); /* Added glow */
+  box-shadow: 0 0 8px rgba(20, 184, 166, 0.4); /* Added glow */
   animation: float 6s ease-in-out infinite;
   transform: translate(
     calc(var(--mouse-x, 50%) * 1vw - 3px), /* Adjusted for new size */
@@ -69,8 +69,8 @@
 .cursor-particles::after {
   width: 3px; /* Increased from 2px */
   height: 3px; /* Increased from 2px */
-  background: rgba(251, 146, 60, 0.8); /* Increased opacity from 0.5 to 0.8 */
-  box-shadow: 0 0 6px rgba(251, 146, 60, 0.5); /* Added glow */
+  background: rgba(94, 234, 212, 0.8); /* Increased opacity from 0.5 to 0.8 */
+  box-shadow: 0 0 6px rgba(94, 234, 212, 0.5); /* Added glow */
   animation-delay: -3s;
   animation-duration: 4s;
   transform: translate(

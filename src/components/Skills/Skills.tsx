@@ -121,8 +121,8 @@ const Skills: React.FC = () => {
     <section id="skills" className="skills section" ref={ref}>
       <AnimatedBackground 
         particleCount={30} 
-        particleColor="#f97316" 
-        connectionColor="#fb923c" 
+        particleColor="#14b8a6" 
+        connectionColor="#5eead4" 
       />
       <div className="container">
         <motion.h2

@@ -1,5 +1,5 @@
 .skills {
-  background: radial-gradient(ellipse at center, rgba(249, 115, 22, 0.03) 0%, transparent 70%) !important;
+  background: radial-gradient(ellipse at center, rgba(20, 184, 166, 0.03) 0%, transparent 70%) !important;
   position: relative;
   z-index: 2;
 }
@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   gap: var(--space-xl);
-  margin-bottom: var(--space-2xl);
+  margin-bottom: var(--space-xl);
   padding: var(--space-xl);
   background: var(--bg-card);
   border: 1px solid var(--border-primary);
@@ -43,7 +43,7 @@
   display: flex;
   justify-content: center;
   gap: var(--space-md);
-  margin-bottom: var(--space-2xl);
+  margin-bottom: var(--space-xl);
   flex-wrap: wrap;
 }
 
@@ -67,11 +67,11 @@
   background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
   color: var(--text-primary);
   border-color: transparent;
-  box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 4px 15px rgba(20, 184, 166, 0.3);
 }
 
 .active-skills-container {
-  min-height: 200px;
+  min-height: 100px;
   max-width: 1200px;
   margin: 0 auto;
 }

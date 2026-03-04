@@ -42,8 +42,8 @@ const About: React.FC = () => {
     <section id="about" className="about section" ref={ref}>
       <AnimatedBackground 
         particleCount={30} 
-        particleColor="#f97316" 
-        connectionColor="#fb923c" 
+        particleColor="#14b8a6" 
+        connectionColor="#5eead4" 
       />
       <div className="container">
         <motion.div
@@ -121,7 +121,7 @@ const About: React.FC = () => {
           animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          {highlights.map((highlight, index) => (
+          {/* {highlights.map((highlight, index) => (
             <motion.div
               key={highlight.title}
               className="highlight-card"
@@ -136,7 +136,7 @@ const About: React.FC = () => {
               <h3 className="highlight-title">{highlight.title}</h3>
               <p className="highlight-description">{highlight.description}</p>
             </motion.div>
-          ))}
+          ))} */}
         </motion.div>
       </div>
     </section>

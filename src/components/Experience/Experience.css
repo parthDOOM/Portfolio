@@ -1,5 +1,5 @@
 .experience {
-  background: radial-gradient(ellipse at center, rgba(249, 115, 22, 0.03) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(20, 184, 166, 0.03) 0%, transparent 70%);
   position: relative;
   overflow: hidden;
   z-index: 2;
@@ -34,7 +34,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
   gap: var(--space-md);
 }
 
@@ -71,7 +71,7 @@
 .experience-bullets {
   list-style: none;
   padding: 0;
-  margin: 0 0 var(--space-xl) 0;
+  margin: 0 0 var(--space-lg) 0;
   flex-grow: 1;
 }
 
@@ -115,7 +115,7 @@
   overflow-x: auto;
   padding-bottom: 6px;
   scrollbar-width: thin;
-  scrollbar-color: rgba(249, 115, 22, 0.2) transparent;
+  scrollbar-color: rgba(20, 184, 166, 0.2) transparent;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -128,13 +128,13 @@
 }
 
 .experience-tech-scroll::-webkit-scrollbar-thumb {
-  background-color: rgba(249, 115, 22, 0.1);
+  background-color: rgba(20, 184, 166, 0.1);
   border-radius: 20px;
   transition: background-color 0.3s ease;
 }
 
 .experience-card:hover .experience-tech-scroll::-webkit-scrollbar-thumb {
-  background-color: rgba(249, 115, 22, 0.4);
+  background-color: rgba(20, 184, 166, 0.4);
 }
 
 .tech-tag {

@@ -11,7 +11,7 @@ interface AnimatedBackgroundProps {
 const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
   className = '',
   particleCount = 25,
-  particleColor = '#f97316',
+  particleColor = '#14b8a6',
   connectionColor = '#6366f1'
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);

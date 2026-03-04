@@ -1,5 +1,5 @@
 .achievements {
-  background: radial-gradient(ellipse at center, rgba(249, 115, 22, 0.03) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(20, 184, 166, 0.03) 0%, transparent 70%);
   position: relative;
   overflow: hidden;
   z-index: 2; /* Ensure content appears above cursor effects */
@@ -9,8 +9,8 @@
   background: var(--bg-card);
   border: 1px solid var(--border-primary);
   border-radius: var(--radius-xl);
-  padding: var(--space-2xl);
-  margin-bottom: var(--space-3xl);
+  padding: var(--space-xl);
+  margin-bottom: var(--space-2xl);
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -93,7 +93,7 @@
 .achievements-grid {
   position: relative;
   z-index: 1;
-  margin-bottom: var(--space-3xl);
+  margin-bottom: var(--space-2xl);
 }
 
 .subsection-title {
@@ -162,7 +162,7 @@
 }
 
 .cp-card:hover .cp-icon img {
-  filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(249, 115, 22, 0.5));
+  filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(20, 184, 166, 0.5));
 }
 
 .cp-info {
@@ -319,7 +319,7 @@
 
 .achievement-link-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 8px 20px rgba(20, 184, 166, 0.3);
 }
 
 .achievement-link-button.secondary:hover {

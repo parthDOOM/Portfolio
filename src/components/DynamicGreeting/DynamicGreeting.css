@@ -16,7 +16,7 @@
 }
 
 .greeting-text {
-  background: linear-gradient(135deg, #f97316, #fb923c);
+  background: linear-gradient(135deg, #14b8a6, #5eead4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -33,7 +33,7 @@
 }
 
 .dynamic-greeting.evening {
-  --accent-color: #f97316;
+  --accent-color: #14b8a6;
 }
 
 .dynamic-greeting.night {
@@ -48,14 +48,14 @@
 }
 
 .dynamic-greeting.afternoon .greeting-text {
-  background: linear-gradient(135deg, #f59e0b, #f97316);
+  background: linear-gradient(135deg, #f59e0b, #14b8a6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .dynamic-greeting.evening .greeting-text {
-  background: linear-gradient(135deg, #f97316, #fb923c);
+  background: linear-gradient(135deg, #14b8a6, #5eead4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

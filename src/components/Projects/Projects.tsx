@@ -267,8 +267,8 @@ const Projects: React.FC = () => {
     <section id="projects" className="projects section" ref={ref}>
       <AnimatedBackground 
         particleCount={30} 
-        particleColor="#f97316" 
-        connectionColor="#fb923c" 
+        particleColor="#14b8a6" 
+        connectionColor="#5eead4" 
       />
       <div className="container">
         <motion.h2

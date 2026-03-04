@@ -14,8 +14,8 @@
   --text-muted: #666666;
   
   /* Accent colors */
-  --accent-primary: #f97316;
-  --accent-secondary: #ea580c;
+  --accent-primary: #14b8a6;
+  --accent-secondary: #0d9488;
   --accent-success: #10b981;
   --accent-warning: #f59e0b;
   --accent-error: #ef4444;
@@ -23,7 +23,7 @@
   /* Interactive states */
   --border-primary: #2a2a2a;
   --border-hover: #3a3a3a;
-  --border-focus: #ea580c;
+  --border-focus: #0d9488;
   
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
@@ -123,7 +123,7 @@ body {
 }
 
 .section {
-  padding: clamp(var(--space-2xl), 8vw, var(--space-3xl)) 0;
+  padding: clamp(var(--space-xl), 5vw, var(--space-2xl)) 0;
   position: relative;
 }
 
@@ -132,14 +132,14 @@ body {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 800;
   color: var(--text-primary);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
   position: relative;
 }
 
 .section-title::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: -8px;
   left: 50%;
   transform: translateX(-50%);
   width: 60px;
@@ -151,12 +151,12 @@ body {
 .section-subtitle {
   text-align: center;
   color: var(--text-secondary);
-  font-size: 1.2rem;
-  margin-bottom: var(--space-3xl);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-xl);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .text-gradient {
