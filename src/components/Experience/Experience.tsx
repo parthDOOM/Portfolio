@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Briefcase, Calendar, MapPin, Award } from 'lucide-react';
+import { Calendar, MapPin, Award } from 'lucide-react';
 import { experiences } from '../../data/portfolioData';
 import AnimatedBackground from '../AnimatedBackground';
 import './Experience.css';

@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Code2, Zap, Target, Heart } from 'lucide-react';
 import { personalInfo } from '../../data/portfolioData';
 import AnimatedBackground from '../AnimatedBackground';
 import './About.css';
@@ -15,28 +14,6 @@ const About: React.FC = () => {
       setHasAnimated(true);
     }
   }, [isInView, hasAnimated]);
-  const highlights = [
-    {
-      icon: <Code2 size={24} />,
-      title: "Full-Stack Development",
-      description: "MERN & WAMP stack expertise with modern frameworks and best practices"
-    },
-    {
-      icon: <Zap size={24} />,
-      title: "Problem Solving",
-      description: "ICPC Regionalist with strong algorithmic thinking and optimization skills"
-    },
-    {
-      icon: <Target size={24} />,
-      title: "AI & Machine Learning",
-      description: "Experience with neural networks, GANs, CNNs, and generative AI solutions"
-    },
-    {
-      icon: <Heart size={24} />,
-      title: "Passion for Innovation",
-      description: "Always exploring new technologies and pushing the boundaries of what's possible"
-    }
-  ];
 
   return (
     <section id="about" className="about section" ref={ref}>
@@ -113,30 +90,6 @@ const About: React.FC = () => {
               <div className="image-backdrop" />
             </div>
           </motion.div>
-        </motion.div>
-
-        <motion.div
-          className="highlights-grid"
-          initial={{ opacity: 0, y: 50 }}
-          animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          {/* {highlights.map((highlight, index) => (
-            <motion.div
-              key={highlight.title}
-              className="highlight-card"
-              initial={{ opacity: 0, y: 30 }}
-              animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.6, delay: 0.1 * index }}
-              whileHover={{ y: -5 }}
-            >
-              <div className="highlight-icon">
-                {highlight.icon}
-              </div>
-              <h3 className="highlight-title">{highlight.title}</h3>
-              <p className="highlight-description">{highlight.description}</p>
-            </motion.div>
-          ))} */}
         </motion.div>
       </div>
     </section>

@@ -24,7 +24,7 @@ const Achievements: React.FC = () => {
       setCurrentImageIndex((prev) => (prev + 1) % icpcImages.length);
     }, 4000);
     return () => clearInterval(timer);
-  }, []);
+  }, [icpcImages.length]);
 
   useEffect(() => {
     // Fetch Codeforces rating
