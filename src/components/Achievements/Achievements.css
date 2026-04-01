@@ -34,7 +34,7 @@
 }
 
 .icpc-title {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: 800;
   color: var(--text-primary);
   margin-bottom: var(--space-lg);
@@ -201,7 +201,7 @@
 
 .achievements-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: var(--space-lg);
 }
 
@@ -337,6 +337,10 @@
   .icpc-image img {
     height: 200px;
   }
+
+  .achievements-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
@@ -364,5 +368,10 @@
 
   .icpc-title {
     font-size: 1.5rem;
+  }
+
+  .icpc-certificate {
+    width: 100%;
+    justify-content: center;
   }
 }

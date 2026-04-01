@@ -82,14 +82,14 @@ const Footer: React.FC = () => {
           <div className="footer-divider" />
 
           <div className="footer-bottom">
-            <div className="social-links">
+            <div className="footer-social-links">
               {socialLinks.map((link, index) => (
                 <motion.a
                   key={link.name}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="social-link"
+                  className="footer-social-link"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1, duration: 0.3 }}
@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
                   viewport={{ once: true }}
                 >
                   {link.icon}
-                  <span className="social-tooltip">{link.name}</span>
+                  <span className="footer-social-tooltip">{link.name}</span>
                 </motion.a>
               ))}
             </div>

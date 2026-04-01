@@ -78,7 +78,7 @@ const Experience: React.FC = () => {
                 <div className="experience-tech-container">
                   <div className="experience-tech-scroll">
                     {exp.technologies.map((tech: string) => (
-                      <span key={tech} className="tech-tag">
+                      <span key={tech} className="experience-tech-tag">
                         {tech}
                       </span>
                     ))}

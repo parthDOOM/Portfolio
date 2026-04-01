@@ -22,3 +22,10 @@
   animation: none;
   opacity: 0;
 }
+
+@media (max-width: 768px) {
+  .typewriter-text {
+    white-space: normal;
+    word-break: break-word;
+  }
+}

@@ -112,12 +112,12 @@ const Contact: React.FC = () => {
 
             <div className="contact-social">
               <h4>Connect with me</h4>
-              <div className="social-links">
+              <div className="contact-social-links">
                 <motion.a
                   href={contactInfo.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="social-link"
+                  className="contact-social-link"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -129,7 +129,7 @@ const Contact: React.FC = () => {
                   href={contactInfo.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="social-link"
+                  className="contact-social-link"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
                 >

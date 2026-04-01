@@ -103,6 +103,8 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
+  max-height: 75vh;
+  overflow-y: auto;
 }
 
 .mobile-nav-item {
@@ -128,7 +130,7 @@
   border-bottom: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .desktop-nav {
     display: none;
   }
@@ -139,5 +141,16 @@
 
   .header-container {
     padding: 0 var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text,
+  .logo-accent {
+    font-size: 1.3rem;
+  }
+
+  .mobile-nav {
+    padding: var(--space-md);
   }
 }

@@ -97,16 +97,9 @@
 }
 
 /* Mobile optimization - disable cursor effects */
-@media (max-width: 768px) or (hover: none) {
-  .cursor-background {
-    background: linear-gradient(135deg, 
-      rgba(31, 41, 55, 0.8) 0%, 
-      rgba(17, 24, 39, 0.9) 50%, 
-      rgba(31, 41, 55, 0.8) 100%
-    ) !important;
-  }
-  
+@media (max-width: 768px), (hover: none) {
+  .cursor-background,
   .cursor-particles {
-    display: none;
+    display: none !important;
   }
 }

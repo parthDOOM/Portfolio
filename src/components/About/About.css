@@ -17,7 +17,7 @@
   z-index: 1;
 }
 
-.section-title {
+.about .section-title {
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 800;
   color: var(--text-primary);
@@ -25,7 +25,7 @@
   position: relative;
 }
 
-.section-title::after {
+.about .section-title::after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -203,7 +203,7 @@
     height: 320px;
   }
 
-  .section-title::after {
+  .about .section-title::after {
     left: 50%;
     transform: translateX(-50%);
   }
@@ -222,5 +222,24 @@
 
   .highlight-card {
     padding: var(--space-lg);
+  }
+
+  .resume-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-intro,
+  .about-details,
+  .about-conclusion {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .profile-image-container {
+    width: 170px;
+    height: 220px;
   }
 }

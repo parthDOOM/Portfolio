@@ -138,7 +138,7 @@ export const projects: Project[] = [
 
 export const experiences: Experience[] = [
   {
-    title: "Cyber Security Intern",
+    title: "Software Engineering Intern",
     company: "TCS R&I",
     location: "Hyderabad, India",
     duration: "May 2025 - Jul 2025",
@@ -151,7 +151,7 @@ export const experiences: Experience[] = [
     certificateUrl: "/assets/2927832-Parthiv Jasoliya.pdf"
   },
   {
-    title: "GenAI Intern",
+    title: "Software Engineering Intern",
     company: "VoxelVerse",
     location: "Hyderabad, India",
     duration: "Jul 2024 - Aug 2024",

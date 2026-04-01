@@ -11,6 +11,12 @@ const CursorTracker: React.FC<CursorTrackerProps> = ({ children }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const supportsFineHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (!supportsFineHover) {
+      setIsHovering(false);
+      return;
+    }
+
     let animationFrameId: number;
     let lastTime = 0;
     const throttleTime = 16; // ~60fps
