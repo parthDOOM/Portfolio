@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Eye, Github, Linkedin } from 'lucide-react';
 import { personalInfo, contactInfo } from '../../data/portfolioData';
-import AnimatedBackground from '../AnimatedBackground';
 import TypewriterText from '../TypewriterText';
-import DynamicGreeting from '../DynamicGreeting';
 import './Hero.css';
 
 const Hero: React.FC = () => {
@@ -32,12 +30,6 @@ const Hero: React.FC = () => {
 
   return (
     <section id="hero" className="hero">
-      <AnimatedBackground 
-        particleCount={35} 
-        particleColor="#14b8a6" 
-        connectionColor="#5eead4" 
-      />
-      
       <div className="hero-content">
         <motion.div
           className="hero-text"
@@ -45,8 +37,6 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <DynamicGreeting />
-          
           <motion.p
             className="hero-greeting"
             initial={{ opacity: 0 }}

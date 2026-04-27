@@ -3,7 +3,6 @@ import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { ExternalLink, Github, Download, X } from 'lucide-react';
 import { projects } from '../../data/portfolioData';
 import { Project } from '../../types';
-import AnimatedBackground from '../AnimatedBackground';
 import './Projects.css';
 
 const Projects: React.FC = () => {
@@ -265,11 +264,6 @@ const Projects: React.FC = () => {
 
   return (
     <section id="projects" className="projects section" ref={ref}>
-      <AnimatedBackground 
-        particleCount={30} 
-        particleColor="#14b8a6" 
-        connectionColor="#5eead4" 
-      />
       <div className="container">
         <motion.h2
           className="section-title"

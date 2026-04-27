@@ -1,168 +1,136 @@
 .achievements {
-  background: radial-gradient(ellipse at center, rgba(20, 184, 166, 0.03) 0%, transparent 70%);
   position: relative;
   overflow: hidden;
-  z-index: 2; /* Ensure content appears above cursor effects */
+  z-index: 2;
 }
 
 .icpc-highlight {
-  background: var(--bg-card);
+  background: color-mix(in srgb, var(--bg-card) 90%, white 10%);
   border: 1px solid var(--border-primary);
   border-radius: var(--radius-xl);
   padding: var(--space-xl);
   margin-bottom: var(--space-2xl);
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.icpc-highlight::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
 }
 
 .icpc-content {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: var(--space-2xl);
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--space-xl);
   align-items: center;
 }
 
 .icpc-title {
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  font-weight: 800;
+  font-size: clamp(1.2rem, 2.8vw, 1.72rem);
+  font-family: var(--font-display);
+  font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: var(--space-lg);
-  background: linear-gradient(135deg, var(--text-primary), var(--accent-primary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  margin-bottom: var(--space-md);
+  line-height: 1.2;
 }
 
 .icpc-description {
   color: var(--text-secondary);
-  line-height: 1.7;
-  font-size: 1.1rem;
-  margin-bottom: var(--space-xl);
+  line-height: 1.66;
+  font-size: clamp(0.92rem, 1.2vw, 0.98rem);
+  margin-bottom: var(--space-lg);
 }
 
 .icpc-certificate {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-md) var(--space-xl);
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-  color: var(--text-primary);
+  gap: var(--space-xs);
+  padding: 0.58rem 0.92rem;
+  background: var(--text-primary);
+  color: #f7f2e9;
   text-decoration: none;
-  border-radius: var(--radius-lg);
+  border-radius: 999px;
   font-weight: 600;
-  transition: all var(--transition-normal);
 }
 
-.icpc-certificate:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
-}
-
-.icpc-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.icpc-gallery {
   position: relative;
-  height: 250px;
   width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 0.9rem;
+  border: 1px solid var(--border-primary);
+  background: var(--bg-secondary);
+  overflow: hidden;
 }
 
-.icpc-image img {
+.icpc-gallery-image {
   position: absolute;
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 700ms ease-in-out;
+}
+
+.icpc-gallery-image.active {
+  opacity: 1;
 }
 
 .cp-section,
 .achievements-grid {
-  position: relative;
-  z-index: 1;
   margin-bottom: var(--space-2xl);
 }
 
 .subsection-title {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: clamp(1.3rem, 2.4vw, 1.58rem);
+  font-family: var(--font-display);
+  font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: var(--space-2xl);
+  margin-bottom: var(--space-xl);
   text-align: center;
-  position: relative;
 }
 
 .subsection-title::after {
   content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-  border-radius: 2px;
+  display: block;
+  width: 62px;
+  height: 2px;
+  margin: 0.6rem auto 0;
+  background: color-mix(in srgb, var(--accent-secondary), var(--accent-primary) 30%);
 }
 
 .cp-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--space-xl);
+  gap: var(--space-md);
 }
 
 .cp-card {
-  background: var(--bg-card);
+  background: color-mix(in srgb, var(--bg-card) 92%, white 8%);
   border: 1px solid var(--border-primary);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
   text-decoration: none;
-  transition: all var(--transition-normal);
-  position: relative;
   display: flex;
   align-items: center;
-  gap: var(--space-lg);
+  gap: var(--space-md);
 }
 
 .cp-card:hover {
-  background: var(--bg-card-hover);
   border-color: var(--border-hover);
-  box-shadow: var(--shadow-lg);
 }
 
 .cp-icon {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg-tertiary);
-  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  border-radius: 50%;
   border: 1px solid var(--border-primary);
 }
 
 .cp-icon img {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   object-fit: contain;
-  filter: brightness(0) invert(1);
-  transition: filter 0.3s ease;
-}
-
-.cp-card:hover .cp-icon img {
-  filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(20, 184, 166, 0.5));
 }
 
 .cp-info {
@@ -170,69 +138,60 @@
 }
 
 .cp-platform {
-  font-size: 1.1rem;
+  font-size: 0.96rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: var(--space-xs);
+  margin-bottom: 2px;
 }
 
 .cp-rating {
-  font-size: 1rem;
+  font-size: 0.86rem;
   font-weight: 600;
-  color: var(--accent-primary);
-  margin-bottom: var(--space-xs);
+  color: var(--accent-secondary);
+  margin-bottom: 2px;
   font-family: var(--font-mono);
 }
 
 .cp-username {
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
 }
 
 .cp-link-icon {
   color: var(--text-muted);
-  transition: color var(--transition-fast);
-}
-
-.cp-card:hover .cp-link-icon {
-  color: var(--accent-primary);
 }
 
 .achievements-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-  gap: var(--space-lg);
+  gap: var(--space-md);
 }
 
 .achievement-card {
-  background: var(--bg-card);
+  background: color-mix(in srgb, var(--bg-card) 92%, white 8%);
   border: 1px solid var(--border-primary);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
   display: flex;
   align-items: flex-start;
-  gap: var(--space-lg);
-  transition: all var(--transition-normal);
-  cursor: pointer;
+  gap: var(--space-md);
 }
 
 .achievement-card:hover {
-  background: var(--bg-card-hover);
   border-color: var(--border-hover);
-  box-shadow: var(--shadow-md);
 }
 
 .achievement-icon {
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(99, 102, 241, 0.1);
-  border: 1px solid rgba(99, 102, 241, 0.2);
-  border-radius: var(--radius-md);
-  color: var(--accent-primary);
+  background: color-mix(in srgb, var(--accent-secondary) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-secondary) 34%, transparent);
+  border-radius: 50%;
+  color: var(--accent-secondary);
   flex-shrink: 0;
 }
 
@@ -241,91 +200,85 @@
 }
 
 .achievement-title {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
 }
 
 .achievement-description {
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.56;
   margin-bottom: var(--space-md);
+  font-size: 0.88rem;
 }
 
 .achievement-meta {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: var(--space-md);
+  gap: var(--space-sm);
 }
 
 .achievement-date {
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
+  gap: 4px;
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.82rem;
 }
 
 .achievement-category {
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: var(--radius-sm);
-  font-size: 0.8rem;
-  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.67rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.08em;
 }
 
 .achievement-category.competition,
 .achievement-category.ml {
-  background: rgba(16, 185, 129, 0.1);
+  background: color-mix(in srgb, var(--accent-success) 18%, transparent);
   color: var(--accent-success);
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  border: 1px solid color-mix(in srgb, var(--accent-success) 30%, transparent);
 }
 
 .achievement-category.certification {
-  background: rgba(245, 158, 11, 0.1);
+  background: color-mix(in srgb, var(--accent-warning) 18%, transparent);
   color: var(--accent-warning);
-  border: 1px solid rgba(245, 158, 11, 0.2);
+  border: 1px solid color-mix(in srgb, var(--accent-warning) 30%, transparent);
 }
 
 .achievement-category.award {
-  background: rgba(99, 102, 241, 0.1);
-  color: var(--accent-primary);
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  background: color-mix(in srgb, var(--accent-secondary) 18%, transparent);
+  color: var(--accent-secondary);
+  border: 1px solid color-mix(in srgb, var(--accent-secondary) 30%, transparent);
 }
 
 .achievement-link-button {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-xs);
-  padding: 6px 16px;
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-  color: var(--text-primary);
+  gap: 4px;
+  padding: 0.4rem 0.78rem;
+  background: var(--text-primary);
+  color: #f7f2e9;
   text-decoration: none;
-  border-radius: var(--radius-lg);
-  font-size: 0.85rem;
+  border-radius: 999px;
+  font-size: 0.77rem;
   font-weight: 600;
-  transition: all var(--transition-normal);
   border: 1px solid transparent;
 }
 
 .achievement-link-button.secondary {
-  background: var(--bg-tertiary);
+  background: transparent;
   border: 1px solid var(--border-primary);
-  color: var(--text-primary);
-}
-
-.achievement-link-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(20, 184, 166, 0.3);
+  color: var(--text-secondary);
 }
 
 .achievement-link-button.secondary:hover {
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
-  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  color: var(--text-primary);
 }
 
 @media (max-width: 968px) {
@@ -334,8 +287,9 @@
     text-align: center;
   }
 
-  .icpc-image img {
-    height: 200px;
+  .icpc-gallery {
+    max-width: 680px;
+    margin: 0 auto;
   }
 
   .achievements-list {
@@ -348,26 +302,16 @@
     grid-template-columns: 1fr;
   }
 
-  .cp-card {
-    flex-direction: column;
-    text-align: center;
-  }
-
+  .cp-card,
   .achievement-card {
     flex-direction: column;
     text-align: center;
+    align-items: center;
+    padding: 0.95rem;
   }
 
   .achievement-meta {
     justify-content: center;
-  }
-
-  .icpc-highlight {
-    padding: var(--space-xl);
-  }
-
-  .icpc-title {
-    font-size: 1.5rem;
   }
 
   .icpc-certificate {

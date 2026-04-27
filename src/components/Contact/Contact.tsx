@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Mail, MapPin, Send, Github, Linkedin } from 'lucide-react';
 import { contactInfo } from '../../data/portfolioData';
-import AnimatedBackground from '../AnimatedBackground';
 import './Contact.css';
 
 const Contact: React.FC = () => {
@@ -43,11 +42,6 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="contact section" ref={ref}>
-      <AnimatedBackground 
-        particleCount={30} 
-        particleColor="#14b8a6" 
-        connectionColor="#5eead4" 
-      />
       <div className="container">
         <motion.h2
           className="section-title"

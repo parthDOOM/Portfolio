@@ -6,14 +6,16 @@
 .typewriter-cursor {
   animation: blink 1s infinite;
   color: var(--accent-primary);
-  font-weight: normal;
+  font-weight: 500;
 }
 
 @keyframes blink {
-  0%, 50% {
+  0%,
+  50% {
     opacity: 1;
   }
-  51%, 100% {
+  51%,
+  100% {
     opacity: 0;
   }
 }

@@ -5,31 +5,30 @@
   right: 0;
   z-index: var(--z-fixed);
   transition: all var(--transition-normal);
-  padding: var(--space-md) 0;
-  background: rgba(10, 10, 10, 0.8);
-  backdrop-filter: blur(10px);
+  padding: 0.8rem 0;
+  background: color-mix(in srgb, var(--bg-primary) 82%, white 18%);
   border-bottom: 1px solid transparent;
 }
 
 .header.scrolled {
-  background: rgba(10, 10, 10, 0.95);
   border-bottom-color: var(--border-primary);
-  padding: var(--space-sm) 0;
+  box-shadow: 0 8px 24px rgba(30, 24, 18, 0.08);
 }
 
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 1160px;
   margin: 0 auto;
-  padding: 0 var(--space-lg);
+  padding: 0 var(--space-xl);
+  gap: var(--space-md);
 }
 
 .logo {
   cursor: pointer;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 2px;
   user-select: none;
 }
@@ -38,11 +37,11 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-primary);
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
 }
 
 .logo-accent {
-  font-size: 1.5rem;
+  font-size: 1.55rem;
   font-weight: 700;
   color: var(--accent-primary);
 }
@@ -50,20 +49,25 @@
 .desktop-nav {
   display: flex;
   align-items: center;
-  gap: var(--space-xl);
+  gap: 0.3rem;
+  padding: 0.22rem;
+  background: color-mix(in srgb, var(--bg-secondary) 76%, white 24%);
+  border: 1px solid var(--border-primary);
+  border-radius: 999px;
 }
 
 .nav-item {
   position: relative;
-  background: none;
+  background: transparent;
   border: none;
   color: var(--text-secondary);
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 0.82rem;
+  font-weight: 600;
   cursor: pointer;
-  padding: var(--space-sm) 0;
+  padding: 0.46rem 0.82rem;
   transition: color var(--transition-fast);
   font-family: var(--font-sans);
+  border-radius: 999px;
 }
 
 .nav-item:hover,
@@ -73,61 +77,56 @@
 
 .nav-indicator {
   position: absolute;
-  bottom: -4px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-  border-radius: 1px;
+  inset: 0;
+  z-index: -1;
+  background: color-mix(in srgb, var(--bg-card) 82%, white 18%);
+  border: 1px solid var(--border-primary);
+  border-radius: 999px;
 }
 
 .mobile-menu-button {
   display: none;
-  background: none;
-  border: none;
+  background: color-mix(in srgb, var(--bg-card) 88%, white 12%);
+  border: 1px solid var(--border-primary);
   color: var(--text-primary);
   cursor: pointer;
-  padding: var(--space-sm);
-  margin: calc(var(--space-sm) * -1);
+  padding: 0.45rem;
+  border-radius: var(--radius-md);
 }
 
 .mobile-nav {
   position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: rgba(10, 10, 10, 0.98);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border-primary);
-  padding: var(--space-lg);
+  top: calc(100% + 0.4rem);
+  left: var(--space-md);
+  right: var(--space-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  padding: var(--space-md);
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
-  max-height: 75vh;
-  overflow-y: auto;
+  gap: 0.3rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
 }
 
 .mobile-nav-item {
-  background: none;
+  background: transparent;
   border: none;
   color: var(--text-secondary);
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 0.94rem;
+  font-weight: 600;
   cursor: pointer;
-  padding: var(--space-md) 0;
+  padding: 0.56rem 0.5rem;
   text-align: left;
-  transition: color var(--transition-fast);
+  transition: color var(--transition-fast), background var(--transition-fast);
   font-family: var(--font-sans);
-  border-bottom: 1px solid var(--border-primary);
+  border-radius: 0.55rem;
 }
 
 .mobile-nav-item:hover,
 .mobile-nav-item.active {
   color: var(--text-primary);
-}
-
-.mobile-nav-item:last-child {
-  border-bottom: none;
+  background: color-mix(in srgb, var(--bg-secondary) 84%, white 16%);
 }
 
 @media (max-width: 900px) {
@@ -148,9 +147,5 @@
   .logo-text,
   .logo-accent {
     font-size: 1.3rem;
-  }
-
-  .mobile-nav {
-    padding: var(--space-md);
   }
 }

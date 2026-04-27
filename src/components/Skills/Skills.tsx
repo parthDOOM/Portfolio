@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { skills } from '../../data/portfolioData';
 import { Skill } from '../../types';
-import AnimatedBackground from '../AnimatedBackground';
 import './Skills.css';
 
 const Skills: React.FC = () => {
@@ -119,11 +118,6 @@ const Skills: React.FC = () => {
 
   return (
     <section id="skills" className="skills section" ref={ref}>
-      <AnimatedBackground 
-        particleCount={30} 
-        particleColor="#14b8a6" 
-        connectionColor="#5eead4" 
-      />
       <div className="container">
         <motion.h2
           className="section-title"

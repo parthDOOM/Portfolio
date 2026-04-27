@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { personalInfo } from '../../data/portfolioData';
-import AnimatedBackground from '../AnimatedBackground';
 import './About.css';
 
 const About: React.FC = () => {
@@ -17,11 +16,6 @@ const About: React.FC = () => {
 
   return (
     <section id="about" className="about section" ref={ref}>
-      <AnimatedBackground 
-        particleCount={30} 
-        particleColor="#14b8a6" 
-        connectionColor="#5eead4" 
-      />
       <div className="container">
         <motion.div
           className="about-content"

@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Calendar, MapPin, Award } from 'lucide-react';
 import { experiences } from '../../data/portfolioData';
-import AnimatedBackground from '../AnimatedBackground';
 import './Experience.css';
 
 const Experience: React.FC = () => {
@@ -18,11 +17,6 @@ const Experience: React.FC = () => {
 
   return (
     <section id="experience" className="experience section" ref={ref}>
-      <AnimatedBackground 
-        particleCount={30} 
-        particleColor="#14b8a6" 
-        connectionColor="#5eead4" 
-      />
       <div className="container">
         <motion.h2
           className="section-title"
