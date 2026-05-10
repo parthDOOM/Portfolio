@@ -7,7 +7,7 @@ export const personalInfo = {
   bio: "Welcome to my portfolio! I am a Software Developer studying at NIT Surat, passionate about programming, web development, IoT and artificial intelligence. With a strong foundation in languages like Java, C/C++, and Python, I've sharpened my skills by working on real-world projects and tackling challenging problems.",
   fullBio: "Some highlights include building responsive web applications using modern frameworks like React and optimizing database systems for high performance. I've also explored the fields of generative AI and machine learning, developing innovative solutions such as a platform for creating intricate 2D artwork and physics models during my internship. With hands-on experience in tools and technologies like MERN stack, Spring Boot, and neural networks(GANs, CNNs), I bring a blend of technical expertise and problem-solving ability. My achievements in competitive programming, including being an ICPC Regionalist and ranking among the top in global coding contests(META Hackercup), reflect my drive to excel in this field.",
   resumeUrl: "/assets/ParthivJasoliya-2026-SDE.pdf",
-  profileImage: "/assets/self1.jpg"
+  profileImage: "/assets/self.jpeg"
 };
 
 export const skills: Skill[] = [
