@@ -140,7 +140,7 @@ export const experiences: Experience[] = [
   {
     title: "Software Engineering Intern",
     company: "TruEstate",
-    location: "Gurugram, India",
+    location: "Bangalore, India",
     duration: "Jan 2026 – Present",
     description: [
       "Designed and deployed scalable cloud-native systems using GCP (Cloud Run, App Engine, Compute Engine, Cloud SQL, BigQuery, Cloud Scheduler, Pub/Sub, Cloud Tasks) for Canvas Homes.",
