@@ -2,39 +2,39 @@ import { Project, Skill, Achievement, CompetitiveProgramming, ContactInfo, Exper
 
 export const personalInfo = {
   name: "Parthiv Jasoliya",
-  title: "Software Developer & Data Analyst",
+  title: "Software Engineer & AI Architect",
   subtitle: "Studying at NIT Surat",
-  bio: "Welcome to my portfolio! I am a Software Developer studying at NIT Surat, passionate about programming, web development, IoT and artificial intelligence. With a strong foundation in languages like Java, C/C++, and Python, I've sharpened my skills by working on real-world projects and tackling challenging problems.",
-  fullBio: "Some highlights include building responsive web applications using modern frameworks like React and optimizing database systems for high performance. I've also explored the fields of generative AI and machine learning, developing innovative solutions such as a platform for creating intricate 2D artwork and physics models during my internship. With hands-on experience in tools and technologies like MERN stack, Spring Boot, and neural networks(GANs, CNNs), I bring a blend of technical expertise and problem-solving ability. My achievements in competitive programming, including being an ICPC Regionalist and ranking among the top in global coding contests(META Hackercup), reflect my drive to excel in this field.",
+  bio: "Welcome to my portfolio! I am a Software Engineer studying at NIT Surat, passionate about cloud-native systems, generative AI, and high-performance computing. I specialize in building scalable applications that leverage cutting-edge technologies to solve complex real-world problems.",
+  fullBio: "I specialize in building scalable cloud-native systems and AI-powered applications. My recent work includes designing high-performance property matching engines using vector embeddings (Qdrant) and architecting custom email communication platforms with generative AI at TruEstate. I have also developed autonomous AI-driven agent workflows for cloud security and hybrid ingestion pipelines for high-volume threat intelligence at TCS R&I. With a strong background in competitive programming (ICPC Regionalist, Meta Hacker Cup Round 3) and hands-on expertise in Next.js, NestJS, Python, and GCP, I thrive at the intersection of software engineering and machine learning.",
   resumeUrl: "/assets/ParthivJasoliya-2026-SDE.pdf",
   profileImage: "/assets/self.jpeg"
 };
 
 export const skills: Skill[] = [
   // Web Development
-  { name: "Full Stack Web Dev (MERN & WAMP)", category: "web", level: 4, experience: "2+ years", projects: 8 },
-  { name: "HTML", category: "web", level: 3, experience: "3+ years", projects: 12 },
-  { name: "CSS / SCSS", category: "web", level: 3, experience: "2+ years", projects: 10 },
+  { name: "Next.js & React", category: "web", level: 4, experience: "2+ years", projects: 8 },
+  { name: "NestJS & Node.js", category: "web", level: 4, experience: "1.5+ years", projects: 5 },
+  { name: "Full Stack (MERN & WAMP)", category: "web", level: 4, experience: "2+ years", projects: 8 },
+  { name: "HTML / CSS / SCSS", category: "web", level: 3, experience: "3+ years", projects: 12 },
   { name: "JavaScript", category: "web", level: 4, experience: "2+ years", projects: 15 },
-  { name: "React", category: "web", level: 4, experience: "1+ years", projects: 6 },
-  { name: "Node.js", category: "web", level: 3, experience: "1+ years", projects: 5 },
   
   // Programming Languages
   { name: "C++", category: "programming", level: 5, experience: "3+ years", projects: 20 },
   { name: "Python", category: "programming", level: 4, experience: "2+ years", projects: 12 },
   { name: "Java", category: "programming", level: 4, experience: "2+ years", projects: 8 },
-  { name: "TypeScript", category: "programming", level: 3, experience: "1+ years", projects: 4 },
+  { name: "TypeScript", category: "programming", level: 4, experience: "1.5+ years", projects: 6 },
   
-  // Machine Learning
-  { name: "Python", category: "ml", level: 4, experience: "2+ years", projects: 8 },
-  { name: "TensorFlow", category: "ml", level: 3, experience: "1+ years", projects: 4 },
-  { name: "Neural Networks", category: "ml", level: 3, experience: "1+ years", projects: 3 },
+  // Machine Learning & AI
+  { name: "LLMs & Agentic Frameworks", category: "ml", level: 4, experience: "1+ years", projects: 6 },
+  { name: "Generative AI (Diffusion, GANs)", category: "ml", level: 4, experience: "1.5+ years", projects: 4 },
+  { name: "Vector Databases (Qdrant)", category: "ml", level: 3, experience: "6+ months", projects: 2 },
+  { name: "TensorFlow & PyTorch", category: "ml", level: 3, experience: "1+ years", projects: 5 },
   
   // Tools & Technologies
-  { name: "Git", category: "tools", level: 4, experience: "3+ years", projects: 25 },
-  { name: "Docker", category: "tools", level: 2, experience: "6+ months", projects: 3 },
-  { name: "AWS", category: "tools", level: 3, experience: "1+ years", projects: 4 },
-  { name: "MongoDB", category: "tools", level: 3, experience: "1+ years", projects: 5 },
+  { name: "GCP (Cloud Run, SQL, Pub/Sub)", category: "tools", level: 4, experience: "1+ years", projects: 4 },
+  { name: "AWS (Lambda, IAM, S3)", category: "tools", level: 3, experience: "1+ years", projects: 4 },
+  { name: "Git & Docker", category: "tools", level: 4, experience: "3+ years", projects: 25 },
+  { name: "MongoDB & PostgreSQL", category: "tools", level: 3, experience: "1.5+ years", projects: 7 },
 ];
 
 export const projects: Project[] = [
@@ -139,28 +139,40 @@ export const projects: Project[] = [
 export const experiences: Experience[] = [
   {
     title: "Software Engineering Intern",
+    company: "TruEstate",
+    location: "Gurugram, India",
+    duration: "Jan 2026 – Present",
+    description: [
+      "Designed and deployed scalable cloud-native systems using GCP (Cloud Run, App Engine, Compute Engine, Cloud SQL, BigQuery, Cloud Scheduler, Pub/Sub, Cloud Tasks) for Canvas Homes.",
+      "Launched a high-performance property matching engine using vector embeddings and Qdrant, computing similarity scores across all listings to deliver intelligent match percentages for buyers.",
+      "Architected an AI-powered email communication platform (custom-built email client replica) with prediction models and semantic analysis by integrating generative AI APIs, improving sales team efficiency."
+    ],
+    technologies: ["Next.js", "NestJS", "TypeScript", "GCP", "Qdrant", "PostgreSQL"]
+  },
+  {
+    title: "Software Engineering Intern",
     company: "TCS R&I",
     location: "Hyderabad, India",
-    duration: "May 2025 - Jul 2025",
+    duration: "May 2025 – Jul 2025",
     description: [
-      "Designed a secure ingestion pipeline to normalize 10+ diverse threat-intel feeds from various sources into an enterprise-ready data model, standardizing formats and reducing parsing errors by 40% using RAG and LLM.",
-      "Developed autonomous AI-driven agent workflows for cloud security-automating policy compliance checks, posture checks, and adaptive remediation-reducing manual triage effort by 30% and improving response time consistency.",
-      "Integrated the agent into an end-to-end tool that suggests policy restructuring, access control tuning, and least-privilege recommendations-streamlining audits and reducing policy misconfigurations in pre-production environments."
+      "Designed a hybrid ingestion pipeline utilizing Python scripts for high-volume structured feeds (STIX/JSON) and a fine-tuned LLM to extract entities from unstructured vendor reports, processing 100,000+ events/day.",
+      "Automated CIS benchmark checks across 50+ AWS resources using Python Lambda agents, identifying and mitigating 120+ security misconfigurations pre-deployment.",
+      "Evaluated 10,000+ IAM access patterns using custom AI agents, leading to a 30% reduction in overly permissive policies."
     ],
-    technologies: ["RAG", "LLM", "Cloud Security", "AI Workflows", "Cyber Security"],
+    technologies: ["Python", "AWS", "LLMs", "Agentic Frameworks", "IAM"],
     certificateUrl: "/assets/2927832-Parthiv Jasoliya.pdf"
   },
   {
     title: "Software Engineering Intern",
-    company: "VoxelVerse",
+    company: "Voxel Verse",
     location: "Hyderabad, India",
-    duration: "Jul 2024 - Aug 2024",
+    duration: "Jul 2024 – Aug 2024",
     description: [
-      "Engineered a generative AI platform that allows users to automatically produce intricate 2D artwork and physics models, resulting in faster turnaround times during the asset creation process.",
-      "Streamlined the world environment generation process using neural rendering and data-driven techniques, reducing generation time by 25% while maintaining complexity and visual fidelity.",
-      "Improved interactive weather systems through machine learning-based pattern recognition, increasing environmental patterns generation accuracy by 15% and enhancing real-time responsiveness."
+      "Architected a Stable Diffusion and PyTorch pipeline to generate 500+ 2D game assets per hour, seamlessly integrating colliders and rigid-body parameters into the game engine.",
+      "Optimized the generation workflow by batching denoising steps and improving GPU utilization, reducing latency from 6.0s to 5.1s (15%) across a 1,000-asset benchmark while maintaining consistent visual fidelity.",
+      "Enhanced environment pattern generation, increasing designer-approval rate from 72% to 79% through A/B testing"
     ],
-    technologies: ["GenAI", "Neural Rendering", "ML", "Pattern Recognition", "Python"]
+    technologies: ["Python", "Diffusion Models", "GANs", "PyTorch", "Stable Diffusion"]
   }
 ];
 
