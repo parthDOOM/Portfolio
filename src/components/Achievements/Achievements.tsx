@@ -71,6 +71,8 @@ const Achievements: React.FC = () => {
                   key={image.src}
                   src={image.src}
                   alt={image.alt}
+                  loading="lazy"
+                  decoding="async"
                   className={`icpc-gallery-image ${index === currentImageIndex ? 'active' : ''}`}
                 />
               ))}

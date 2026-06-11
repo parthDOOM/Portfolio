@@ -15,6 +15,16 @@
   box-shadow: 0 8px 24px rgba(30, 24, 18, 0.08);
 }
 
+.scroll-progress {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-secondary), var(--accent-primary));
+  transform-origin: 0%;
+}
+
 .header-container {
   display: flex;
   align-items: center;

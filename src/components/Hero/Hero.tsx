@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Eye, Github, Linkedin } from 'lucide-react';
-import { personalInfo, contactInfo } from '../../data/portfolioData';
+import { ChevronDown, Eye, Github, Linkedin, Mail } from 'lucide-react';
+import { personalInfo, contactInfo, heroHighlights } from '../../data/portfolioData';
 import TypewriterText from '../TypewriterText';
 import './Hero.css';
 
@@ -28,6 +28,13 @@ const Hero: React.FC = () => {
     }
   };
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="hero" className="hero">
       <div className="hero-content">
@@ -37,6 +44,16 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          <motion.span
+            className="hero-chip"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.5 }}
+          >
+            <span className="hero-chip-dot" aria-hidden="true" />
+            {personalInfo.status}
+          </motion.span>
+
           <motion.p
             className="hero-greeting"
             initial={{ opacity: 0 }}
@@ -90,13 +107,24 @@ const Hero: React.FC = () => {
               <Eye size={18} />
               View Resume
             </motion.a>
-            
+
+            <motion.button
+              onClick={scrollToContact}
+              className="cta-button secondary"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Mail size={18} />
+              Get in Touch
+            </motion.button>
+
             <div className="hero-social">
               <motion.a
                 href={contactInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-button"
+                aria-label="GitHub profile"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -108,12 +136,27 @@ const Hero: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-button"
+                aria-label="LinkedIn profile"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.9 }}
               >
                 <Linkedin size={20} />
               </motion.a>
             </div>
+          </motion.div>
+
+          <motion.div
+            className="hero-highlights"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+          >
+            {heroHighlights.map((highlight) => (
+              <div key={highlight.label} className="hero-highlight">
+                <span className="hero-highlight-value">{highlight.value}</span>
+                <span className="hero-highlight-label">{highlight.label}</span>
+              </div>
+            ))}
           </motion.div>
         </motion.div>
       </div>

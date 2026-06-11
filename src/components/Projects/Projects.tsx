@@ -38,7 +38,17 @@ const Projects: React.FC = () => {
     return () => window.removeEventListener('beforeunload', handleBeforeUnload);
   }, []);
 
-  const filteredProjects = filter === 'featured' 
+  // Close the project modal with the Escape key
+  React.useEffect(() => {
+    if (!selectedProject) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedProject(null);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedProject]);
+
+  const filteredProjects = filter === 'featured'
     ? projects.filter(project => project.featured)
     : projects;
 
@@ -96,7 +106,7 @@ const Projects: React.FC = () => {
         onClick={() => setSelectedProject(project)}
       >
         <div className="project-image">
-          <img src={project.image} alt={project.title} />
+          <img src={project.image} alt={project.title} loading="lazy" decoding="async" />
           <div className="project-overlay">
             <div
               className="project-links"
@@ -116,6 +126,7 @@ const Projects: React.FC = () => {
                   onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
                   onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
                   onClick={(e) => e.stopPropagation()}
+                  aria-label={`View ${project.title} live`}
                 >
                   <ExternalLink size={18} />
                 </a>
@@ -130,6 +141,7 @@ const Projects: React.FC = () => {
                   onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
                   onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
                   onClick={(e) => e.stopPropagation()}
+                  aria-label={`View ${project.title} source code`}
                 >
                   <Github size={18} />
                 </a>
@@ -144,6 +156,7 @@ const Projects: React.FC = () => {
                   onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
                   onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
                   onClick={(e) => e.stopPropagation()}
+                  aria-label={`Download ${project.title}`}
                 >
                   <Download size={18} />
                 </a>
@@ -195,6 +208,7 @@ const Projects: React.FC = () => {
         <button
           className="modal-close"
           onClick={() => setSelectedProject(null)}
+          aria-label="Close project details"
         >
           <X size={24} />
         </button>

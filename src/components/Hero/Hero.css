@@ -40,6 +40,41 @@
   justify-content: center;
 }
 
+.hero-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.32rem 0.85rem;
+  margin-bottom: var(--space-md);
+  border-radius: 999px;
+  border: 1px solid var(--border-primary);
+  background: color-mix(in srgb, var(--bg-secondary) 70%, white 30%);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+}
+
+.hero-chip-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-success);
+  box-shadow: 0 0 0 3px rgba(47, 125, 102, 0.18);
+  animation: chip-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes chip-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px rgba(47, 125, 102, 0.18);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(47, 125, 102, 0.08);
+  }
+}
+
 .hero-greeting {
   font-size: clamp(0.8rem, 1vw, 0.9rem);
   color: var(--text-muted);
@@ -108,9 +143,58 @@
   background: color-mix(in srgb, var(--text-primary), var(--accent-primary) 14%);
 }
 
+.cta-button.secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-primary);
+  font-family: inherit;
+}
+
+.cta-button.secondary:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
 .hero-social {
   display: flex;
   gap: var(--space-sm);
+}
+
+.hero-highlights {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(var(--space-md), 3vw, var(--space-2xl));
+  margin-top: 1.6rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--border-primary);
+  width: 100%;
+}
+
+.hero-highlight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.18rem;
+  min-width: 96px;
+}
+
+.hero-highlight-value {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+  font-weight: 700;
+  color: var(--accent-secondary);
+  line-height: 1.1;
+}
+
+.hero-highlight-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-align: center;
 }
 
 .social-button {
@@ -221,6 +305,18 @@
 }
 
 @media (max-width: 480px) {
+  .hero-highlights {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+    margin-top: 1.2rem;
+    padding-top: 1.1rem;
+  }
+
+  .hero-highlight {
+    min-width: 0;
+  }
+
   .hero-name {
     font-size: clamp(2.1rem, 13vw, 3.1rem);
     line-height: 1.1;

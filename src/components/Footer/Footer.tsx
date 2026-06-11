@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
             </div>
 
             <div className="footer-info">
-              <p className="copyright">(c) 2026 Parthiv Jasoliya. Designed and built with care.</p>
+              <p className="copyright">© 2026 Parthiv Jasoliya. Designed and built with care.</p>
               <p className="tech-stack">Built with React, TypeScript and Framer Motion</p>
             </div>
           </div>

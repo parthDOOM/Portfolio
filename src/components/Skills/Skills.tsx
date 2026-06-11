@@ -42,9 +42,9 @@ const Skills: React.FC = () => {
 
   // Calculate statistics
   const totalSkills = skills.length;
-  const totalProjects = 50; 
+  const totalProjects = 50;
   const problemsSolved = "1500+";
-  const topRating = "2100+";
+  const topRating = "2409";
 
   const categories = [
     { id: 'web', title: 'Web Development' },

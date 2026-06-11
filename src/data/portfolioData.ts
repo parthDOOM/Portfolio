@@ -3,12 +3,20 @@ import { Project, Skill, Achievement, CompetitiveProgramming, ContactInfo, Exper
 export const personalInfo = {
   name: "Parthiv Jasoliya",
   title: "Software Engineer & AI Architect",
-  subtitle: "Studying at NIT Surat",
+  subtitle: "I build cloud-native systems and AI products — from vector-search matching engines to generative pipelines.",
+  status: "SWE Intern @ TruEstate · NIT Surat",
   bio: "Welcome to my portfolio! I am a Software Engineer studying at NIT Surat, passionate about cloud-native systems, generative AI, and high-performance computing. I specialize in building scalable applications that leverage cutting-edge technologies to solve complex real-world problems.",
   fullBio: "I specialize in building scalable cloud-native systems and AI-powered applications. My recent work includes designing high-performance property matching engines using vector embeddings (Qdrant) and architecting custom email communication platforms with generative AI at TruEstate. I have also developed autonomous AI-driven agent workflows for cloud security and hybrid ingestion pipelines for high-volume threat intelligence at TCS R&I. With a strong background in competitive programming (ICPC Regionalist, Meta Hacker Cup Round 3) and hands-on expertise in Next.js, NestJS, Python, and GCP, I thrive at the intersection of software engineering and machine learning.",
   resumeUrl: "/assets/ParthivJasoliya-2026-SDE.pdf",
   profileImage: "/assets/self.jpeg"
 };
+
+export const heroHighlights = [
+  { value: "2409", label: "LeetCode · Guardian" },
+  { value: "5★", label: "CodeChef · 2059" },
+  { value: "2×", label: "ICPC Regionalist" },
+  { value: "Round 3", label: "Meta Hacker Cup" },
+];
 
 export const skills: Skill[] = [
   // Web Development
