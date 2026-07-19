@@ -48,9 +48,9 @@ export const skills: Skill[] = [
 export const projects: Project[] = [
   {
     id: "canvas-homes",
-    title: "Canvas Homes",
+    title: "alldoors.in",
     description: "Next.js real estate platform that enables users to browse, filter, and manage property listings using Redux for global state.",
-    fullDescription: "Canvas Homes is a Next.js real estate platform that enables users to browse, filter, and manage property listings using Redux for global state. It provides detailed property insights, including RERA data and brochures, alongside engagement features like enquiry modals and call scheduling.",
+    fullDescription: "alldoors is a Next.js real estate platform that enables users to browse, filter, and manage property listings using Redux for global state. It provides detailed property insights, including RERA data and brochures, alongside engagement features like enquiry modals and call scheduling.",
     technologies: ["Next.js", "TypeScript", "TailwindCSS", "PostgreSQL", "GCP", "Firebase", "Redux"],
     image: "/assets/canvashomes.png",
     liveUrl: "https://canvas-homes.com",
@@ -149,9 +149,9 @@ export const experiences: Experience[] = [
     title: "Software Engineering Intern",
     company: "TruEstate",
     location: "Bangalore, India",
-    duration: "Jan 2026 – Present",
+    duration: "Jan 2026 – July 2026",
     description: [
-      "Designed and deployed scalable cloud-native systems using GCP (Cloud Run, App Engine, Compute Engine, Cloud SQL, BigQuery, Cloud Scheduler, Pub/Sub, Cloud Tasks) for Canvas Homes.",
+      "Designed and deployed scalable cloud-native systems using GCP (Cloud Run, App Engine, Compute Engine, Cloud SQL, BigQuery, Cloud Scheduler, Pub/Sub, Cloud Tasks) for alldoors.in.",
       "Launched a high-performance property matching engine using vector embeddings and Qdrant, computing similarity scores across all listings to deliver intelligent match percentages for buyers.",
       "Architected an AI-powered email communication platform (custom-built email client replica) with prediction models and semantic analysis by integrating generative AI APIs, improving sales team efficiency."
     ],
