@@ -36,11 +36,14 @@
 }
 
 .logo {
+  border: none;
+  background: transparent;
   cursor: pointer;
   display: flex;
   align-items: baseline;
   gap: 2px;
   user-select: none;
+  padding: 0;
 }
 
 .logo-text {

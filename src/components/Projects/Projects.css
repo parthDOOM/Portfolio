@@ -57,6 +57,11 @@
   box-shadow: var(--shadow-md);
 }
 
+.project-card:focus-visible {
+  outline: 3px solid var(--accent-secondary);
+  outline-offset: 3px;
+}
+
 .project-image {
   position: relative;
   width: 100%;
@@ -88,6 +93,15 @@
 
 .project-card:hover .project-overlay {
   opacity: 1;
+}
+
+.project-card:focus-within .project-overlay {
+  opacity: 1;
+}
+
+.project-card:focus-within .project-links {
+  opacity: 1 !important;
+  transform: scale(1) !important;
 }
 
 .project-links {

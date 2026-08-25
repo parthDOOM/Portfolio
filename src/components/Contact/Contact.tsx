@@ -14,6 +14,7 @@ const Contact: React.FC = () => {
     subject: '',
     message: ''
   });
+  const [formStatus, setFormStatus] = useState('');
 
   React.useEffect(() => {
     if (isInView && !hasAnimated) {
@@ -22,6 +23,7 @@ const Contact: React.FC = () => {
   }, [isInView, hasAnimated]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormStatus('');
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -30,6 +32,7 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setFormStatus('Your email app should open with the message ready to send.');
     
     // Create mailto link with form data
     const subject = encodeURIComponent(formData.subject || 'Portfolio Contact');
@@ -205,6 +208,11 @@ const Contact: React.FC = () => {
                 <Send size={18} />
                 Send Message
               </motion.button>
+              {formStatus && (
+                <p className="form-status" role="status" aria-live="polite">
+                  {formStatus}
+                </p>
+              )}
             </form>
           </motion.div>
         </div>

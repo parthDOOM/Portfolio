@@ -56,15 +56,17 @@ const Header: React.FC<HeaderProps> = ({ activeSection }) => {
         aria-hidden="true"
       />
       <div className="header-container">
-        <motion.div
+        <motion.button
+          type="button"
           className="logo"
+          aria-label="Scroll to home"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => scrollToSection('hero')}
         >
           <span className="logo-text">Parthiv</span>
           <span className="logo-accent">.</span>
-        </motion.div>
+        </motion.button>
 
         {/* Desktop Navigation */}
         <nav className="desktop-nav">

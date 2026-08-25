@@ -7,6 +7,7 @@ import './Projects.css';
 
 const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const modalCloseRef = useRef<HTMLButtonElement>(null);
   const [filter, setFilter] = useState<'all' | 'featured'>('all');
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
@@ -48,6 +49,13 @@ const Projects: React.FC = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [selectedProject]);
 
+  React.useEffect(() => {
+    if (!selectedProject) return;
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+    modalCloseRef.current?.focus();
+    return () => previouslyFocused?.focus();
+  }, [selectedProject]);
+
   const filteredProjects = filter === 'featured'
     ? projects.filter(project => project.featured)
     : projects;
@@ -75,6 +83,9 @@ const Projects: React.FC = () => {
     return (
       <div
         className="project-card"
+        role="button"
+        tabIndex={0}
+        aria-label={`View details for ${project.title}`}
         style={{
           opacity: hasAnimated || shouldAnimate ? 1 : 0,
           transform: hasAnimated || shouldAnimate ? 'translateY(0)' : 'translateY(30px)',
@@ -104,6 +115,12 @@ const Projects: React.FC = () => {
           }
         }}
         onClick={() => setSelectedProject(project)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            setSelectedProject(project);
+          }
+        }}
       >
         <div className="project-image">
           <img src={project.image} alt={project.title} loading="lazy" decoding="async" />
@@ -192,6 +209,7 @@ const Projects: React.FC = () => {
   const ProjectModal: React.FC<{ project: Project }> = ({ project }) => (
     <motion.div
       className="modal-overlay"
+      aria-hidden="false"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -199,6 +217,10 @@ const Projects: React.FC = () => {
     >
       <motion.div
         className="modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="project-modal-title"
+        aria-describedby="project-modal-description"
         initial={{ opacity: 0, scale: 0.8, y: 50 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.8, y: 50 }}
@@ -206,6 +228,7 @@ const Projects: React.FC = () => {
         onClick={(e) => e.stopPropagation()}
       >
         <button
+          ref={modalCloseRef}
           className="modal-close"
           onClick={() => setSelectedProject(null)}
           aria-label="Close project details"
@@ -219,13 +242,13 @@ const Projects: React.FC = () => {
         
         <div className="modal-info">
           <div className="modal-header">
-            <h2 className="modal-title">{project.title}</h2>
+            <h2 id="project-modal-title" className="modal-title">{project.title}</h2>
             {project.featured && (
               <span className="featured-badge">Featured</span>
             )}
           </div>
           
-          <p className="modal-description">{project.fullDescription}</p>
+          <p id="project-modal-description" className="modal-description">{project.fullDescription}</p>
           
           <div className="modal-tech">
             <h4>Technologies Used:</h4>
