@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { Calendar, MapPin, Award } from 'lucide-react';
 import { experiences } from '../../data/portfolioData';
 import './Experience.css';
@@ -14,8 +14,6 @@ const Experience: React.FC = () => {
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   const [activeIndex, setActiveIndex] = useState(defaultIndex);
-
-  const active = experiences[activeIndex];
 
   const selectTab = (index: number) => {
     setActiveIndex(index);
@@ -79,7 +77,7 @@ const Experience: React.FC = () => {
                   role="tab"
                   id={`experience-tab-${index}`}
                   aria-selected={selected}
-                  aria-controls="experience-panel"
+                  aria-controls={`experience-panel-${index}`}
                   tabIndex={selected ? 0 : -1}
                   className={`experience-tab ${selected ? 'active' : ''}`}
                   onClick={() => selectTab(index)}
@@ -103,65 +101,70 @@ const Experience: React.FC = () => {
             })}
           </div>
 
-          <div
-            className="experience-panel"
-            role="tabpanel"
-            id="experience-panel"
-            aria-labelledby={`experience-tab-${activeIndex}`}
-          >
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.div
-                key={activeIndex}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.22 }}
-              >
-                <div className="experience-panel-header">
-                  <h3 className="experience-title">
-                    {active.title} <span className="experience-at">@ {active.company}</span>
-                  </h3>
-                  <div className="experience-meta">
-                    <span className="meta-item">
-                      <Calendar size={14} />
-                      {active.duration}
-                    </span>
-                    <span className="meta-item">
-                      <MapPin size={14} />
-                      {active.location}
-                    </span>
-                  </div>
-                </div>
-
-                <ul className="experience-bullets">
-                  {active.description.map((bullet, i) => (
-                    <li key={i}>{bullet}</li>
-                  ))}
-                </ul>
-
-                <div className="experience-footer">
-                  <div className="experience-tech">
-                    {active.technologies.map((tech) => (
-                      <span key={tech} className="experience-tech-tag">
-                        {tech}
+          {/* Every role is rendered into the same grid cell and only the selected one is
+              shown, so the card always takes the height of the longest role and switching
+              tabs never shifts the sections below. */}
+          <div className="experience-panel">
+            {experiences.map((exp, index) => {
+              const selected = index === activeIndex;
+              return (
+                <motion.div
+                  key={`${exp.company}-${exp.title}`}
+                  className="experience-panel-item"
+                  role="tabpanel"
+                  id={`experience-panel-${index}`}
+                  aria-labelledby={`experience-tab-${index}`}
+                  hidden={!selected}
+                  initial={false}
+                  animate={selected ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  <div className="experience-panel-header">
+                    <h3 className="experience-title">
+                      {exp.title} <span className="experience-at">@ {exp.company}</span>
+                    </h3>
+                    <div className="experience-meta">
+                      <span className="meta-item">
+                        <Calendar size={14} />
+                        {exp.duration}
                       </span>
-                    ))}
+                      <span className="meta-item">
+                        <MapPin size={14} />
+                        {exp.location}
+                      </span>
+                    </div>
                   </div>
 
-                  {active.certificateUrl && (
-                    <a
-                      href={active.certificateUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="exp-cert-btn"
-                    >
-                      <Award size={14} />
-                      Certificate
-                    </a>
-                  )}
-                </div>
-              </motion.div>
-            </AnimatePresence>
+                  <ul className="experience-bullets">
+                    {exp.description.map((bullet, i) => (
+                      <li key={i}>{bullet}</li>
+                    ))}
+                  </ul>
+
+                  <div className="experience-footer">
+                    <div className="experience-tech">
+                      {exp.technologies.map((tech) => (
+                        <span key={tech} className="experience-tech-tag">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {exp.certificateUrl && (
+                      <a
+                        href={exp.certificateUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="exp-cert-btn"
+                      >
+                        <Award size={14} />
+                        Certificate
+                      </a>
+                    )}
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </motion.div>
       </div>

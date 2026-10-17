@@ -101,6 +101,23 @@
   border-radius: var(--radius-lg);
   padding: clamp(1.1rem, 2.6vw, 1.8rem);
   min-width: 0;
+  display: grid;
+}
+
+/* All roles share one grid cell; the cell grows to the tallest role. */
+.experience-panel-item {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Hidden roles still take up space (that's what keeps the height fixed) but are
+   invisible, unfocusable and skipped by screen readers. */
+.experience-panel-item[hidden] {
+  display: flex;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .experience-panel-header {
@@ -169,6 +186,7 @@
   justify-content: space-between;
   align-items: flex-end;
   gap: var(--space-md);
+  margin-top: auto;
   padding-top: var(--space-md);
   border-top: 1px dashed var(--border-primary);
 }
