@@ -19,14 +19,14 @@
   padding: clamp(0.95rem, 2.1vw, 1.45rem);
   display: flex;
   flex-direction: column;
-  transition: all var(--transition-normal);
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
   min-width: 0;
 }
 
+/* The hover lift is Framer's whileHover: it owns this element's transform. */
 .experience-card:hover {
   border-color: var(--border-hover);
   box-shadow: var(--shadow-md);
-  transform: translateY(-4px);
 }
 
 .experience-card-header {
@@ -168,6 +168,11 @@
   font-size: 0.74rem;
   font-weight: 600;
   white-space: nowrap;
+  transition: transform var(--transition-normal);
+}
+
+.exp-cert-btn:hover {
+  transform: translateY(-1px);
 }
 
 @media (max-width: 968px) {

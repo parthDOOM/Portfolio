@@ -29,8 +29,7 @@
 }
 
 .about-intro,
-.about-details,
-.about-conclusion {
+.about-details {
   font-size: clamp(0.98rem, 1.12vw, 1.05rem);
   line-height: 1.78;
   color: var(--text-secondary);

@@ -10,21 +10,21 @@
     <link rel="canonical" href="https://parthivportfolio.netlify.app/" />
     <meta
       name="description"
-      content="Parthiv Jasoliya is a Software Engineer and AI Architect from NIT Surat building cloud-native systems, generative AI products, and scalable web applications."
+      content="Parthiv Jasoliya is a Data Scientist at IndusInd Bank and NIT Surat graduate building data pipelines, cloud-native backends and AI products."
     />
     <meta name="author" content="Parthiv Jasoliya" />
     <meta
       name="keywords"
-      content="Parthiv Jasoliya, Software Engineer, AI Architect, NIT Surat, Full Stack Developer, Machine Learning, Generative AI, Competitive Programming, Next.js, NestJS, Python, GCP"
+      content="Parthiv Jasoliya, Software Engineer, Data Scientist, NIT Surat, Full Stack Developer, Machine Learning, Generative AI, Competitive Programming, Next.js, NestJS, Python, GCP"
     />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://parthivportfolio.netlify.app/" />
-    <meta property="og:title" content="Parthiv Jasoliya - Software Engineer & AI Architect" />
+    <meta property="og:title" content="Parthiv Jasoliya — Software Engineer · Data & AI Systems" />
     <meta
       property="og:description"
-      content="Explore the work, experience, and projects of Parthiv Jasoliya, a Software Engineer and AI Architect building cloud-native systems and AI-powered applications."
+      content="Explore the work, experience, and projects of Parthiv Jasoliya, a software engineer building data pipelines, cloud-native systems and AI-powered applications."
     />
     <meta property="og:image" content="https://parthivportfolio.netlify.app/assets/self.jpeg" />
     <meta property="og:image:alt" content="Portrait of Parthiv Jasoliya" />
@@ -33,16 +33,20 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://parthivportfolio.netlify.app/" />
-    <meta name="twitter:title" content="Parthiv Jasoliya - Software Engineer & AI Architect" />
+    <meta name="twitter:title" content="Parthiv Jasoliya — Software Engineer · Data & AI Systems" />
     <meta
       name="twitter:description"
-      content="Explore the work, experience, and projects of Parthiv Jasoliya, a Software Engineer and AI Architect building cloud-native systems and AI-powered applications."
+      content="Explore the work, experience, and projects of Parthiv Jasoliya, a software engineer building data pipelines, cloud-native systems and AI-powered applications."
     />
     <meta name="twitter:image" content="https://parthivportfolio.netlify.app/assets/self.jpeg" />
     <meta name="twitter:image:alt" content="Portrait of Parthiv Jasoliya" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    />
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
@@ -54,7 +58,7 @@
         "jobTitle": "Software Engineer",
         "url": "https://parthivportfolio.netlify.app/",
         "image": "https://parthivportfolio.netlify.app/assets/self.jpeg",
-        "description": "Software Engineer and AI Architect building cloud-native systems and AI-powered applications.",
+        "description": "Software engineer building data pipelines, cloud-native systems and AI-powered applications.",
         "affiliation": {
           "@type": "CollegeOrUniversity",
           "name": "National Institute of Technology, Surat"
@@ -77,10 +81,20 @@
       }
     </script>
 
-    <title>Parthiv Jasoliya | Software Engineer & AI Architect</title>
+    <title>Parthiv Jasoliya | Software Engineer · Data & AI</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <!-- Static copy of the contact form so Netlify Forms detects it at deploy time.
+         Keep field names in sync with src/components/Contact/Contact.tsx. -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="subject" />
+      <textarea name="message"></textarea>
+      <input name="bot-field" />
+    </form>
   </body>
 </html>

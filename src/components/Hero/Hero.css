@@ -212,6 +212,7 @@
 }
 
 .social-button:hover {
+  transform: translateY(-2px);
   border-color: var(--accent-secondary);
   color: var(--accent-secondary);
   background: color-mix(in srgb, var(--bg-secondary) 84%, white 16%);
@@ -220,8 +221,10 @@
 .scroll-indicator {
   position: absolute;
   bottom: var(--space-lg);
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  width: fit-content;
+  margin-inline: auto;
   display: flex;
   flex-direction: column;
   align-items: center;

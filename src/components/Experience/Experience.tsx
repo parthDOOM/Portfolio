@@ -33,7 +33,7 @@ const Experience: React.FC = () => {
           animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          My journey through internships and collaborative roles
+          Where I've worked and what I shipped
         </motion.p>
 
         <div className="experience-grid">
@@ -44,6 +44,7 @@ const Experience: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
             >
               <div className="experience-card-header">
                 <div className="company-info">
@@ -80,17 +81,15 @@ const Experience: React.FC = () => {
                 </div>
 
                 {exp.certificateUrl && (
-                  <motion.a
+                  <a
                     href={exp.certificateUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="exp-cert-btn"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
                   >
                     <Award size={14} />
                     Certificate
-                  </motion.a>
+                  </a>
                 )}
               </div>
             </motion.div>

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Eye, Github, Linkedin, Mail } from 'lucide-react';
 import { personalInfo, contactInfo, heroHighlights } from '../../data/portfolioData';
-import TypewriterText from '../TypewriterText';
 import './Hero.css';
 
 const Hero: React.FC = () => {
@@ -10,11 +9,10 @@ const Hero: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      setIsAtTop(scrollTop === 0);
+      setIsAtTop(window.scrollY === 0);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     
     // Check initial position
     handleScroll();
@@ -69,7 +67,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            <TypewriterText text={personalInfo.name} speed={100} delay={1000} />
+            {personalInfo.name}
           </motion.h1>
           
           <motion.h2
@@ -96,52 +94,45 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
           >
-            <motion.a
+            <a
               href={personalInfo.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="cta-button primary"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
             >
               <Eye size={18} />
               View Resume
-            </motion.a>
+            </a>
 
-            <motion.button
+            <button
+              type="button"
               onClick={scrollToContact}
               className="cta-button secondary"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
             >
               <Mail size={18} />
               Get in Touch
-            </motion.button>
+            </button>
 
             <div className="hero-social">
-              <motion.a
+              <a
                 href={contactInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-button"
                 aria-label="GitHub profile"
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.9 }}
               >
                 <Github size={20} />
-              </motion.a>
+              </a>
               
-              <motion.a
+              <a
                 href={contactInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-button"
                 aria-label="LinkedIn profile"
-                whileHover={{ scale: 1.1, y: -2 }}
-                whileTap={{ scale: 0.9 }}
               >
                 <Linkedin size={20} />
-              </motion.a>
+              </a>
             </div>
           </motion.div>
 
@@ -164,6 +155,7 @@ const Hero: React.FC = () => {
       <AnimatePresence>
         {isAtTop && (
           <motion.button
+            type="button"
             className="scroll-indicator"
             onClick={scrollToNext}
             initial={{ opacity: 0 }}

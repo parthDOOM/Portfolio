@@ -51,8 +51,8 @@ const Achievements: React.FC = () => {
             <div className="icpc-text">
               <h3 className="icpc-title">ICPC Amritapuri Regional Onsite 2024 and 2025</h3>
               <p className="icpc-description">
-                Represented my college at the ICPC Regional Amritapuri Onsite in both years, tackling complex
-                problems as a team under strict contest constraints.
+                Qualified for the ICPC Asia Amritapuri Regional onsite in both 2024 and 2025, placing around
+                150th each time — solving algorithmic problems as a three-person team under contest constraints.
               </p>
               <a
                 href="/assets/2025-ICPC Asia Amritapuri Multisite RC 2024-Parthiv Jasoliya-PLACE.pdf"

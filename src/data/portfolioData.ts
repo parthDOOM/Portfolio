@@ -2,11 +2,11 @@ import { Project, Skill, Achievement, CompetitiveProgramming, ContactInfo, Exper
 
 export const personalInfo = {
   name: "Parthiv Jasoliya",
-  title: "Software Engineer & AI Architect",
-  subtitle: "I build cloud-native systems and AI products - from vector-search matching engines to generative pipelines.",
+  title: "Software Engineer · Data & AI Systems",
+  subtitle: "I build data pipelines, cloud-native backends and AI products — from transaction-monitoring engines to vector-search matching.",
   status: "Data Scientist @ IndusInd Bank · NIT Surat",
-  bio: "Welcome to my portfolio! I am a Software Engineer graduated from NIT Surat, passionate about cloud-native systems, generative AI, and high-performance computing. I specialize in building scalable applications that leverage cutting-edge technologies to solve complex real-world problems.",
-  fullBio: "I specialize in building scalable cloud-native systems and AI-powered applications. My recent work includes designing high-performance property matching engines using vector embeddings (Qdrant) and architecting custom email communication platforms with generative AI at TruEstate. I have also developed autonomous AI-driven agent workflows for cloud security and hybrid ingestion pipelines for high-volume threat intelligence at TCS R&I. With a strong background in competitive programming (ICPC Regionalist, Meta Hacker Cup Round 3) and hands-on expertise in Next.js, NestJS, Python, and GCP, I thrive at the intersection of software engineering and machine learning.",
+  bio: "I'm a Data Scientist at IndusInd Bank, where I build the data pipelines and transaction-monitoring systems behind internal audit. Before that I graduated from NIT Surat and interned at TruEstate, TCS Research & Innovation and Voxel Verse.",
+  fullBio: "Most of my work sits where backend engineering meets machine learning: vector-search matching with Qdrant, LLM-assisted ingestion pipelines, AI agents for cloud security, and Stable Diffusion asset generation. I'm most at home in Python, TypeScript (Next.js, NestJS) and GCP, and competitive programming — 2× ICPC Regionalist, Meta Hacker Cup Round 3 — keeps my problem-solving sharp.",
   resumeUrl: "/assets/ParthivJasoliya-2026-SDE.pdf",
   profileImage: "/assets/self.jpeg"
 };
@@ -19,44 +19,93 @@ export const heroHighlights = [
 ];
 
 export const skills: Skill[] = [
-  // Web Development
-  { name: "Next.js & React", category: "web", level: 4, experience: "2+ years", projects: 8 },
-  { name: "NestJS & Node.js", category: "web", level: 4, experience: "1.5+ years", projects: 5 },
-  { name: "Full Stack (MERN & WAMP)", category: "web", level: 4, experience: "2+ years", projects: 8 },
-  { name: "HTML / CSS / SCSS", category: "web", level: 3, experience: "3+ years", projects: 12 },
-  { name: "JavaScript", category: "web", level: 4, experience: "2+ years", projects: 15 },
-  
-  // Programming Languages
-  { name: "C++", category: "programming", level: 5, experience: "3+ years", projects: 20 },
-  { name: "Python", category: "programming", level: 4, experience: "2+ years", projects: 12 },
-  { name: "Java", category: "programming", level: 4, experience: "2+ years", projects: 8 },
-  { name: "TypeScript", category: "programming", level: 4, experience: "1.5+ years", projects: 6 },
-  
+  // Languages
+  { name: "Python", category: "programming" },
+  { name: "C++", category: "programming" },
+  { name: "TypeScript", category: "programming" },
+  { name: "JavaScript", category: "programming" },
+  { name: "SQL", category: "programming" },
+  { name: "Java", category: "programming" },
+  { name: "Verilog", category: "programming" },
+
   // Machine Learning & AI
-  { name: "LLMs & Agentic Frameworks", category: "ml", level: 4, experience: "1+ years", projects: 6 },
-  { name: "Generative AI (Diffusion, GANs)", category: "ml", level: 4, experience: "1.5+ years", projects: 4 },
-  { name: "Vector Databases (Qdrant)", category: "ml", level: 3, experience: "6+ months", projects: 2 },
-  { name: "TensorFlow & PyTorch", category: "ml", level: 3, experience: "1+ years", projects: 5 },
-  
-  // Tools & Technologies
-  { name: "GCP (Cloud Run, SQL, Pub/Sub)", category: "tools", level: 4, experience: "1+ years", projects: 4 },
-  { name: "AWS (Lambda, IAM, S3)", category: "tools", level: 3, experience: "1+ years", projects: 4 },
-  { name: "Git & Docker", category: "tools", level: 4, experience: "3+ years", projects: 25 },
-  { name: "MongoDB & PostgreSQL", category: "tools", level: 3, experience: "1.5+ years", projects: 7 },
+  { name: "LLMs & Agentic Frameworks", category: "ml" },
+  { name: "Vector Search (Qdrant)", category: "ml" },
+  { name: "Diffusion Models & GANs", category: "ml" },
+  { name: "PyTorch", category: "ml" },
+  { name: "TensorFlow", category: "ml" },
+  { name: "Data Pipelines", category: "ml" },
+
+  // Web Development
+  { name: "Next.js & React", category: "web" },
+  { name: "NestJS & Node.js", category: "web" },
+  { name: "FastAPI", category: "web" },
+  { name: "Redux", category: "web" },
+  { name: "Tailwind CSS", category: "web" },
+  { name: "HTML / CSS / SCSS", category: "web" },
+
+  // Cloud & Tools
+  { name: "GCP (Cloud Run, BigQuery, Pub/Sub)", category: "tools" },
+  { name: "AWS (Lambda, IAM, S3)", category: "tools" },
+  { name: "PostgreSQL", category: "tools" },
+  { name: "MongoDB", category: "tools" },
+  { name: "Docker", category: "tools" },
+  { name: "Git", category: "tools" },
 ];
 
 export const projects: Project[] = [
   {
-    id: "canvas-homes",
-    title: "alldoors.in",
-    description: "Next.js real estate platform that enables users to browse, filter, and manage property listings using Redux for global state.",
-    fullDescription: "alldoors is a Next.js real estate platform that enables users to browse, filter, and manage property listings using Redux for global state. It provides detailed property insights, including RERA data and brochures, alongside engagement features like enquiry modals and call scheduling.",
-    technologies: ["Next.js", "TypeScript", "TailwindCSS", "PostgreSQL", "GCP", "Firebase", "Redux"],
-    image: "/assets/canvashomes.png",
-    liveUrl: "https://canvas-homes.com",
+    id: "gridlock-intelligence",
+    title: "Gridlock Intelligence",
+    description: "Forecasts event-driven traffic congestion in Bangalore and plans where police patrols and barricades should go.",
+    fullDescription: "Planned and unplanned events cause predictable congestion spikes that traffic police usually respond to after the fact. Gridlock Intelligence predicts where violations will concentrate, how severe they will be and when the peak hits, then recommends how many officers and barricades to send where. It scores event and parking impact, forecasts congestion with a phase curve calibrated on the Bangalore Traffic Pulse dataset, finds hotspots by clustering 85,918 peak-hour parking violations with HDBSCAN or PostGIS, and plans patrol routes with a PuLP MILP or OR-Tools VRP solver. Deployed on Google Cloud Run with Cloud SQL.",
+    technologies: ["Python", "FastAPI", "PostgreSQL + PostGIS", "HDBSCAN", "OR-Tools", "React", "deck.gl", "GCP"],
+    image: "/assets/gridlock.png",
+    githubUrl: "https://github.com/parthDOOM/FlipkartGridlockR2",
     featured: true
   },
-    {
+  {
+    id: "strata",
+    title: "Strata",
+    description: "Quantitative finance dashboard — pairs trading, Monte Carlo risk and an options engine written in C++.",
+    fullDescription: "Strata is a quantitative research dashboard. Its pairs-trading engine scans 50+ tickers for cointegrated pairs (p < 0.05), computes hedge ratios, half-lives and z-scores, and grid-searches entry/exit thresholds with backtests and Sharpe-ratio heatmaps. A Monte Carlo module runs 10,000+ Geometric Brownian Motion paths to estimate VaR and CVaR at 95% confidence, and the options module draws 3D implied-volatility surfaces with Black-Scholes Greeks computed in a C++ extension (pybind11) at sub-millisecond latency. It also tracks portfolios, technical indicators and market news.",
+    technologies: ["Python", "FastAPI", "C++", "pybind11", "NumPy", "Pandas", "React", "TypeScript"],
+    image: "/assets/strata.png",
+    githubUrl: "https://github.com/parthDOOM/strata",
+    featured: true
+  },
+  {
+    id: "escapement",
+    title: "Escapement",
+    description: "Protocol-engine ASIC on IHP 130 nm where every timed I/O event fires on its exact clock tick — or is refused up front.",
+    fullDescription: "Escapement is a programmable protocol engine chip designed for the Jane Street protocol emulator challenge and built through Tiny Tapeout on IHP's 130 nm SG13CMOS5L process. Firmware schedules pin changes at absolute clock ticks; each event is checked when it is queued, so it either fires on its exact tick or raises a visible fault instead of firing late. UART, SPI, I2C, CAN and JTAG are all implemented in firmware on four isolated hardware contexts. The 6×4-tile design closes timing at 25 MHz across all corners with 23,978 cells, and is verified with cocotb tests, SymbiYosys formal proofs and mutation testing (20/20 mutants killed), plus a custom assembler, instruction-set simulator and timing-certificate checker.",
+    technologies: ["Verilog", "Python", "cocotb", "SymbiYosys", "Tiny Tapeout", "ASIC Design"],
+    image: "/assets/escapement.png",
+    githubUrl: "https://github.com/parthDOOM/escapement",
+    featured: true
+  },
+  {
+    id: "canvas-homes",
+    title: "alldoors.in",
+    description: "Bangalore real estate platform I worked on at TruEstate — listings, filters, RERA data and buyer matching on GCP.",
+    fullDescription: "alldoors is a Next.js real estate platform for Bangalore that lets buyers browse, filter and compare property listings, with detailed insights such as RERA data and brochures plus enquiry and call-scheduling flows. During my internship at TruEstate I worked across its GCP backend (Cloud Run, Cloud SQL, BigQuery, Pub/Sub) and built a vector-embedding matching engine on Qdrant that scores every listing against a buyer's preferences to show a match percentage.",
+    technologies: ["Next.js", "TypeScript", "NestJS", "Tailwind CSS", "PostgreSQL", "GCP", "Qdrant", "Redux"],
+    image: "/assets/canvashomes.png",
+    liveUrl: "https://alldoors.in",
+    featured: true
+  },
+  {
+    id: "rng-analyzer",
+    title: "RNG Flaw Detector",
+    description: "Neural network that classifies random-number-generator output into 8 flaw types, served by FastAPI to a mobile app.",
+    fullDescription: "A machine-learning system for checking the health of true random number generators. A FastAPI service extracts 131 statistical features from an uploaded binary sequence (entropy, chi-squared and Kolmogorov-Smirnov tests, autocorrelation, FFT and PSD coefficients and more) and classifies it with a TensorFlow/Keras model into one of eight classes: Healthy, Biased, Stuck_00, Stuck_FF, ReducedEntropy, Periodic, Correlated or LCG_Flawed. An Expo (React Native) app lets users pick a .bin file and see the predicted status, per-class confidence and recommendations.",
+    technologies: ["Python", "TensorFlow", "FastAPI", "SciPy", "React Native", "Expo"],
+    image: "/assets/model.jpg",
+    githubUrl: "https://github.com/parthDOOM/RNG_Android_App",
+    downloadUrl: "https://drive.google.com/file/d/1xYAXZVwO7GzXKOxOffqgO88uMqwlLi4t/view?usp=sharing",
+    featured: false
+  },
+  {
     id: "graph-visualizer",
     title: "Graph Visualizer",
     description: "TypeScript web tool for data visualization with downloadable PNG export functionality.",
@@ -65,27 +114,6 @@ export const projects: Project[] = [
     image: "/assets/graph.png",
     githubUrl: "https://github.com/parthDOOM/Lookatthisgraph",
     liveUrl: "https://lookatthisgraph.netlify.app/",
-    featured: true
-  },
-  {
-    id: "rng-analyzer",
-    title: "RNG Analyzer Mobile App",
-    description: "Expo React Native application for RNG data analysis with machine learning predictions.",
-    fullDescription: "The RNG Analyzer Mobile App is an Expo (React Native) application that acts as a client for the RNG Flaw Detection API. Users can select binary (.bin) files containing RNG data, send them to the backend API for analysis, and view the results—such as predicted status (\"Healthy,\" \"Biased,\" \"Periodic\"), confidence scores, detailed explanations, and recommendations.",
-    technologies: ["React Native", "Expo", "TypeScript", "Machine Learning", "File System API"],
-    image: "/assets/model.jpg",
-    githubUrl: "https://github.com/parthDOOM/RNG_Android_App",
-    downloadUrl: "https://drive.google.com/file/d/1xYAXZVwO7GzXKOxOffqgO88uMqwlLi4t/view?usp=sharing",
-    featured: true
-  },
-  {
-    id: "fifa-database",
-    title: "FIFA Database",
-    description: "Full Stack WAMP project with robust CRUD functionalities for FIFA player data management.",
-    fullDescription: "The FIFA Database Full Stack WAMP project is a user-interactive and responsive web application built using the WAMP stack (Windows, Apache, MySQL, PHP). It features robust CRUD (Create, Read, Update, Delete) functionalities, allowing users to search for player data, update existing records, delete entries, and add new information seamlessly. The project leverages a MySQL database to store detailed player statistics and utilizes PHP for server-side logic, with a responsive front-end designed using HTML, CSS, and JavaScript to ensure compatibility across various devices.",
-    technologies: ["PHP", "MySQL", "Apache", "HTML", "CSS", "JavaScript"],
-    image: "/assets/FIFA.png",
-    githubUrl: "https://github.com/parthDOOM/FIFA_DBMS",
     featured: false
   },
   {
@@ -97,17 +125,6 @@ export const projects: Project[] = [
     image: "/assets/selfdrive.png",
     githubUrl: "https://github.com/parthDOOM/Self_Driving_Car.git",
     liveUrl: "https://selfdrv.netlify.app/",
-    featured: true
-  },
-  {
-    id: "cafe-website",
-    title: "Website for a Business",
-    description: "MERN stack café website with Tailwind CSS and workshop reservation system.",
-    fullDescription: "Welcome to my Café Website! This single-page website was created for GWOC 2024, crafted with the MERN stack and styled using Tailwind CSS, offers a seamless and delightful browsing experience. Designed to capture the essence of my cozy café, the website features a sleek and modern interface that ensures easy navigation and a visually appealing layout. The responsive design ensures that the website looks stunning on any device, whether you're browsing from a desktop, tablet, or smartphone.",
-    technologies: ["React", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
-    image: "/assets/cafe.png",
-    githubUrl: "https://github.com/parthDOOM/GWOC_Proj_2024",
-    liveUrl: "https://aayudhpanchal.github.io/Koe-s-Cafe-GWOC-24/",
     featured: false
   },
   {
@@ -119,27 +136,6 @@ export const projects: Project[] = [
     image: "/assets/dotsgame.png",
     githubUrl: "https://github.com/parthDOOM/anotherdotsgame",
     liveUrl: "https://anotherdotsgame.netlify.app/",
-    featured: false
-  },
-  {
-    id: "portfolio",
-    title: "Portfolio",
-    description: "Clean, organized showcase optimized for all devices with detailed project information.",
-    fullDescription: "Welcome to my portfolio website! Here, you'll find a clean, organized showcase of my skills, projects, and professional journey, optimized for all devices from desktops to smartphones. Styled with CSS for a cohesive look, the site features detailed sections on my background, technical skills, and completed projects. Each project entry highlights the technologies used and key features.",
-    technologies: ["HTML", "SCSS", "JavaScript", "Responsive Design"],
-    image: "/assets/image.png",
-    githubUrl: "https://github.com/parthDOOM/Portfolio/tree/master",
-    liveUrl: "https://parthivportfolio.netlify.app/",
-    featured: false
-  },
-  {
-    id: "proximity-sensor",
-    title: "Proximity Sensor",
-    description: "Hardware project with HC-SR04 sensor, SSD1306 display, and STM32 board for distance monitoring.",
-    fullDescription: "This hardware project involves proximity detection using an HC-SR04 ultrasonic sensor, an SSD1306 LED display, and an STM32 development board, with code written in Python using the Thonny IDE. The system measures distance and displays it on the LED. If the detected distance falls below a user-defined threshold, an LED connected to port 5 is triggered to alert the user.",
-    technologies: ["Python", "STM32", "HC-SR04", "SSD1306", "Thonny IDE", "Hardware"],
-    image: "/assets/proximity.jpg",
-    githubUrl: "https://github.com/parthDOOM/Proximity_Sensor.git",
     featured: false
   }
 ];
@@ -161,7 +157,7 @@ export const experiences: Experience[] = [
     title: "Software Engineering Intern",
     company: "TruEstate",
     location: "Bangalore, India",
-    duration: "Jan 2026 – July 2026",
+    duration: "Jan 2026 – Jul 2026",
     description: [
       "Designed and deployed scalable cloud-native systems using GCP (Cloud Run, App Engine, Compute Engine, Cloud SQL, BigQuery, Cloud Scheduler, Pub/Sub, Cloud Tasks) for alldoors.in.",
       "Launched a high-performance property matching engine using vector embeddings and Qdrant, computing similarity scores across all listings to deliver intelligent match percentages for buyers.",
@@ -201,8 +197,7 @@ export const achievements: Achievement[] = [
     title: "Amazon ML Summer School 2024",
     description: "Selected from 100,000 applicants for Amazon Machine Learning Summer School 2024",
     date: "2024",
-    category: "ml",
-    link: "#"
+    category: "ml"
   },
   {
     title: "Meta Hacker Cup",

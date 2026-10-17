@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
-import { contactInfo } from '../../data/portfolioData';
+import { contactInfo, personalInfo } from '../../data/portfolioData';
 import './Footer.css';
 
 const Footer: React.FC = () => {
@@ -62,10 +62,8 @@ const Footer: React.FC = () => {
         >
           <div className="footer-top">
             <div className="footer-brand">
-              <h3 className="footer-title">Let&apos;s Connect</h3>
-              <p className="footer-subtitle">
-                Always open to discussing new opportunities and interesting projects.
-              </p>
+              <p className="footer-title">{personalInfo.name}</p>
+              <p className="footer-subtitle">{personalInfo.title}</p>
             </div>
 
             <motion.button
@@ -103,7 +101,7 @@ const Footer: React.FC = () => {
             </div>
 
             <div className="footer-info">
-              <p className="copyright">© 2026 Parthiv Jasoliya. Designed and built with care.</p>
+              <p className="copyright">© {new Date().getFullYear()} {personalInfo.name}</p>
               <p className="tech-stack">Built with React, TypeScript and Framer Motion</p>
             </div>
           </div>

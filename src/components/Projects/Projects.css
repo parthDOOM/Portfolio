@@ -42,6 +42,16 @@
   margin: 0 auto;
 }
 
+/* Featured work gets bigger cards in a 2-up grid (and no orphaned third column). */
+.projects-grid.is-featured {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  max-width: 980px;
+}
+
+.projects-grid.is-featured .project-image {
+  height: clamp(190px, 26vw, 260px);
+}
+
 .project-card {
   background: color-mix(in srgb, var(--bg-card) 90%, white 10%);
   border: 1px solid var(--border-primary);
@@ -50,6 +60,7 @@
   position: relative;
   transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
   width: 100%;
+  cursor: pointer;
 }
 
 .project-card:hover {
@@ -99,14 +110,18 @@
   opacity: 1;
 }
 
-.project-card:focus-within .project-links {
-  opacity: 1 !important;
-  transform: scale(1) !important;
-}
-
 .project-links {
   display: flex;
   gap: var(--space-sm);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.project-card:hover .project-links,
+.project-card:focus-within .project-links {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .project-link {
@@ -120,6 +135,11 @@
   border-radius: 50%;
   color: #19120d;
   text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.project-link:hover {
+  transform: scale(1.1);
 }
 
 .project-content {

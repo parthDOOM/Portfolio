@@ -14,10 +14,6 @@ export interface Project {
 export interface Skill {
   name: string;
   category: 'web' | 'programming' | 'ml' | 'tools';
-  level: number; // 1-5 scale (1=Beginner, 2=Learning, 3=Comfortable, 4=Proficient, 5=Expert)
-  experience: string;
-  projects: number;
-  icon?: string;
 }
 
 export interface Experience {

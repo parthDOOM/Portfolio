@@ -8,9 +8,3 @@
 [build.environment]
   # Set the Node.js version
   NODE_VERSION = "18"
-
-# Handle client-side routing (for React Router)
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200

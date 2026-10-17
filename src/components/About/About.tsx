@@ -46,25 +46,22 @@ const About: React.FC = () => {
               <p className="about-details">
                 {personalInfo.fullBio}
               </p>
-
-              <p className="about-conclusion">
-                Explore my portfolio to see my projects, skills, and the passion I bring to advancing technology!
-              </p>
             </motion.div>
 
-            <motion.a
-              href={personalInfo.resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="resume-link"
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
             >
-              View Full Resume
-            </motion.a>
+              <a
+                href={personalInfo.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="resume-link"
+              >
+                View Full Resume
+              </a>
+            </motion.div>
           </div>
 
           <motion.div

@@ -117,6 +117,7 @@
 }
 
 .contact-social-link:hover {
+  transform: translateY(-2px);
   border-color: var(--border-hover);
   color: var(--text-primary);
 }
@@ -188,11 +189,35 @@
   transform: translateY(-1px);
 }
 
+.submit-button:disabled {
+  opacity: 0.7;
+  cursor: progress;
+  transform: none;
+}
+
 .form-status {
   color: var(--accent-secondary);
   font-size: 0.82rem;
   line-height: 1.45;
   margin: 0;
+}
+
+.form-status:empty {
+  display: none;
+}
+
+.form-status a {
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.form-honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 @media (max-width: 968px) {
