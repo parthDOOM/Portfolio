@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
-import { personalInfo, projects } from './data/portfolioData';
+import { experiences, personalInfo, projects } from './data/portfolioData';
 
 const mockFetch = jest.fn();
 
@@ -23,6 +23,24 @@ test('links to the resume from the header', () => {
   const resumeLinks = screen.getAllByRole('link', { name: /resume/i });
   expect(resumeLinks.length).toBeGreaterThan(0);
   resumeLinks.forEach((link) => expect(link).toHaveAttribute('href', personalInfo.resumeUrl));
+});
+
+test('experience tabs open on the current employer and switch on click and arrow keys', async () => {
+  render(<App />);
+  const current = experiences.find((exp) => /present/i.test(exp.duration))!;
+  const other = experiences.find((exp) => exp !== current)!;
+
+  const currentTab = screen.getByRole('tab', { name: new RegExp(current.company) });
+  expect(currentTab).toHaveAttribute('aria-selected', 'true');
+  expect(screen.getByRole('tabpanel')).toHaveTextContent(current.description[0]);
+
+  userEvent.click(screen.getByRole('tab', { name: new RegExp(other.company) }));
+  await waitFor(() => expect(screen.getByRole('tabpanel')).toHaveTextContent(other.description[0]));
+
+  const otherTab = screen.getByRole('tab', { name: new RegExp(other.company) });
+  userEvent.type(otherTab, '{arrowup}');
+  const previous = experiences[experiences.indexOf(other) - 1] ?? experiences[experiences.length - 1];
+  expect(screen.getByRole('tab', { name: new RegExp(previous.company) })).toHaveAttribute('aria-selected', 'true');
 });
 
 test('opens and closes the project details dialog', async () => {

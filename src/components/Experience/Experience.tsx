@@ -1,19 +1,45 @@
 import React, { useState, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Calendar, MapPin, Award } from 'lucide-react';
 import { experiences } from '../../data/portfolioData';
 import './Experience.css';
 
+const isCurrent = (duration: string) => /present/i.test(duration);
+
+// Open on the current employer; fall back to the most recent role.
+const defaultIndex = Math.max(0, experiences.findIndex((exp) => isCurrent(exp.duration)));
+
 const Experience: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const [hasAnimated, setHasAnimated] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(defaultIndex);
 
-  React.useEffect(() => {
-    if (isInView && !hasAnimated) {
-      setHasAnimated(true);
+  const active = experiences[activeIndex];
+
+  const selectTab = (index: number) => {
+    setActiveIndex(index);
+    const tab = tabRefs.current[index];
+    tab?.focus();
+    // On narrow screens the tab list scrolls sideways; keep the chosen tab in view.
+    tab?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  };
+
+  const handleTabKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    const last = experiences.length - 1;
+    const keyMap: Record<string, number> = {
+      ArrowDown: activeIndex === last ? 0 : activeIndex + 1,
+      ArrowRight: activeIndex === last ? 0 : activeIndex + 1,
+      ArrowUp: activeIndex === 0 ? last : activeIndex - 1,
+      ArrowLeft: activeIndex === 0 ? last : activeIndex - 1,
+      Home: 0,
+      End: last,
+    };
+    if (e.key in keyMap) {
+      e.preventDefault();
+      selectTab(keyMap[e.key]);
     }
-  }, [isInView, hasAnimated]);
+  };
 
   return (
     <section id="experience" className="experience section" ref={ref}>
@@ -21,7 +47,7 @@ const Experience: React.FC = () => {
         <motion.h2
           className="section-title"
           initial={{ opacity: 0, y: 30 }}
-          animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
           Professional Experience
@@ -30,71 +56,114 @@ const Experience: React.FC = () => {
         <motion.p
           className="section-subtitle"
           initial={{ opacity: 0, y: 20 }}
-          animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           Where I've worked and what I shipped
         </motion.p>
 
-        <div className="experience-grid">
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={`${exp.company}-${exp.title}`}
-              className="experience-card card-glass"
-              initial={{ opacity: 0, y: 30 }}
-              animate={hasAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
-              whileHover={{ y: -4, transition: { duration: 0.2 } }}
-            >
-              <div className="experience-card-header">
-                <div className="company-info">
-                  <h3 className="experience-title">{exp.title}</h3>
-                  <h4 className="experience-company">{exp.company}</h4>
-                </div>
-                <div className="experience-meta">
-                  <div className="meta-item">
-                    <Calendar size={14} />
-                    <span>{exp.duration}</span>
-                  </div>
-                  <div className="meta-item">
-                    <MapPin size={14} />
-                    <span>{exp.location}</span>
-                  </div>
-                </div>
-              </div>
+        <motion.div
+          className="experience-layout"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <div className="experience-tabs" role="tablist" aria-label="Employers" aria-orientation="vertical">
+            {experiences.map((exp, index) => {
+              const selected = index === activeIndex;
+              return (
+                <button
+                  key={`${exp.company}-${exp.title}`}
+                  ref={(el) => { tabRefs.current[index] = el; }}
+                  type="button"
+                  role="tab"
+                  id={`experience-tab-${index}`}
+                  aria-selected={selected}
+                  aria-controls="experience-panel"
+                  tabIndex={selected ? 0 : -1}
+                  className={`experience-tab ${selected ? 'active' : ''}`}
+                  onClick={() => selectTab(index)}
+                  onKeyDown={handleTabKeyDown}
+                >
+                  {selected && (
+                    <motion.span
+                      className="experience-tab-indicator"
+                      layoutId="experience-tab-indicator"
+                      transition={{ type: 'spring', stiffness: 380, damping: 32 }}
+                      aria-hidden="true"
+                    />
+                  )}
+                  <span className="experience-tab-company">
+                    {exp.company}
+                    {isCurrent(exp.duration) && <span className="experience-current">Now</span>}
+                  </span>
+                  <span className="experience-tab-meta">{exp.duration}</span>
+                </button>
+              );
+            })}
+          </div>
 
-              <ul className="experience-bullets">
-                {exp.description.map((bullet: string, i: number) => (
-                  <li key={i}>{bullet}</li>
-                ))}
-              </ul>
+          <div
+            className="experience-panel"
+            role="tabpanel"
+            id="experience-panel"
+            aria-labelledby={`experience-tab-${activeIndex}`}
+          >
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={activeIndex}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.22 }}
+              >
+                <div className="experience-panel-header">
+                  <h3 className="experience-title">
+                    {active.title} <span className="experience-at">@ {active.company}</span>
+                  </h3>
+                  <div className="experience-meta">
+                    <span className="meta-item">
+                      <Calendar size={14} />
+                      {active.duration}
+                    </span>
+                    <span className="meta-item">
+                      <MapPin size={14} />
+                      {active.location}
+                    </span>
+                  </div>
+                </div>
 
-              <div className="experience-footer">
-                <div className="experience-tech-container">
-                  <div className="experience-tech-scroll">
-                    {exp.technologies.map((tech: string) => (
+                <ul className="experience-bullets">
+                  {active.description.map((bullet, i) => (
+                    <li key={i}>{bullet}</li>
+                  ))}
+                </ul>
+
+                <div className="experience-footer">
+                  <div className="experience-tech">
+                    {active.technologies.map((tech) => (
                       <span key={tech} className="experience-tech-tag">
                         {tech}
                       </span>
                     ))}
                   </div>
-                </div>
 
-                {exp.certificateUrl && (
-                  <a
-                    href={exp.certificateUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="exp-cert-btn"
-                  >
-                    <Award size={14} />
-                    Certificate
-                  </a>
-                )}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                  {active.certificateUrl && (
+                    <a
+                      href={active.certificateUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="exp-cert-btn"
+                    >
+                      <Award size={14} />
+                      Certificate
+                    </a>
+                  )}
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
